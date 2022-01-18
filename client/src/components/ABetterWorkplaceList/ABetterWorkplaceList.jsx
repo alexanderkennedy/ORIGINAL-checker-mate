@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import Checkbox from "../Checkbox/Checkbox";
 import purplePlayIcon from "../../assets/images/icons/purplePlayIcon.svg";
 import "./ABetterWorkplaceList.scss";
+import { Link } from 'react-router-dom';
 
 const playerHeight = "84.375"
 const playerWidth = "150"
@@ -26,7 +27,8 @@ const betterWorkplaceData = [
     {
       "mediaType": "v",
       "min": "7",
-      "url": <iframe width={playerWidth} height={playerHeight} src="https://www.youtube.com/embed/497RHaz_ajg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>,
+      "url":"https://www.youtube.com/embed/497RHaz_ajg",
+      // "url": <iframe width={playerWidth} height={playerHeight} src="https://www.youtube.com/embed/497RHaz_ajg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>,
       "title": "Video account of bullying from WorkSafe BC",
       "priority": "4",
       "watched":false
@@ -46,7 +48,7 @@ class ABetterWorkplaceList extends Component {
               <tr>
                 <th>MEDIA TYPE</th>
                 <th>TIME IN MINUTES</th>
-                <th>SOURCE</th>
+                {/* <th>SOURCE</th> */}
                 <th>TITLE</th>
                 <th>PRIORITY</th>
                  <th>WATCHED</th>
@@ -60,10 +62,9 @@ class ABetterWorkplaceList extends Component {
               </tr> */}
              {betterWorkplaceData.map((val,key) => 
                 <tr key={key}>
-                  <td>{val.mediaType}</td>
+                  <td>{val.mediaType}<td><img src={purplePlayIcon} alt="purple play icon" /></td></td>
                   <td>{val.min}</td>
-                  <td>{val.url}</td>
-                  <td>{val.title}</td>
+                  <td><a href={val.url} target="_blank">{val.title}</a></td>
                   <td>{val.priority}</td>
                   <td> <Checkbox
             // checked={this.state.checked}
