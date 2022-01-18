@@ -1,0 +1,23 @@
+[
+  {
+    "media-type": "t",
+    "time-in-minutes": "5",
+    "url": "https://www.summitplanting.com/expectations.html",
+    "Title": "Tree-Sprint Policy on Bullying and Harassment",
+    "Priority": "5"
+  },
+  {
+    "media-type": "t",
+    "time-in-minutes": "5",
+    "url": "https://www.worksafebc.com/en/health-safety/hazards-exposures/bullying-harassment",
+    "Title": "Explanation of Legal definition of Bullying and Harassment",
+    "Priority": "5"
+  },
+  {
+    "media-type": "v",
+    "time-in-minutes": "7",
+    "url": "https://www.youtube.com/watch?v=497RHaz_ajg&t=1s&ab_channel=WorkSafeBC",
+    "Title": "Video account of bullying from WorkSafe BC",
+    "Priority": "4"
+  }
+]
