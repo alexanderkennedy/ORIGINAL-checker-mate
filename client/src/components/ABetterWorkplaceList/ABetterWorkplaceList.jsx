@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Checkbox from "../Checkbox/Checkbox";
 import purplePlayIcon from "../../assets/images/icons/purplePlayIcon.svg";
+import "./ABetterWorkplaceList.scss";
 
 const playerHeight = "84.375"
 const playerWidth = "150"
@@ -9,7 +10,7 @@ const betterWorkplaceData = [
     {
       "mediaType": "t",
       "min": "5",
-      "url": "https://www.summitplanting.com/expectations.html",
+      "url": "https://www.treesprintplanting.com/expectations.html",
       "title": "Tree-Sprint Policy on Bullying and Harassment",
       "priority": "5",
       "watched":false
@@ -41,31 +42,6 @@ class ABetterWorkplaceList extends Component {
   render() {
         return (
             <div className="a-better-workplace-list">  
-            {/* <div className="list-title-wrapper">
-                <h2 className="list-title-wrapper__title">A Better Workplace</h2>
-            </div>
-           
-            <ul className="list-heading-row">
-            <li className="list-heading-row__media-type">MEDIA TYPE
-            <img src="https://placedog.net/50" alt="picture of dog" /></li>
-            <li className="list-heading-row__time">TIME IN MINUTES</li>
-            <li className="list-heading-row__url">SOURCE</li>
-            <li className="list-heading-row__title">TITLE</li>
-            <li className="list-heading-row__priority">PRIORITY</li>
-            </ul>
-            
-            <ul className="list-item-row">
-            <li className="list-item-row__media-type">
-                <img src="" alt="purple play icon" />
-            </li>
-            <li className="list-item-row__time">7</li>
-            <li className="list-item-row__url">https://www.summitplanting.com/expectations.html</li>
-            <li className="list-item-row__title">Tree-Sprint Policy on Bullying and Harrasemnt</li>
-            <li className="list-item-row__priority">MANDATORY</li>
-            </ul> */}
-
-
-           
             <table>
               <tr>
                 <th>MEDIA TYPE</th>
@@ -90,7 +66,7 @@ class ABetterWorkplaceList extends Component {
                   <td>{val.title}</td>
                   <td>{val.priority}</td>
                   <td> <Checkbox
-            checked={this.state.checked}
+            // checked={this.state.checked}
             onChange={this.handleCheckboxChange}
           /></td>
                 </tr>

@@ -1,76 +1,21 @@
-.list-title-wrapper {
-  display: flex;
-  &__title {
-    display: flex;
-    color: rgb(4, 0, 255);
-  }
-}
-.list-heading-row {
-  display: flex;
-  justify-content: space-around;
-  &__media-type {
-    display: flex;
-    color: red;
-  }
-  &__time {
-    display: flex;
-    color: red;
-  }
-  &__url {
-    display: flex;
-    color: red;
-  }
-  &__title {
-    display: flex;
-    color: red;
-  }
-  &__priority {
-    display: flex;
-    color: red;
-  }
-}
-.list-item-row {
-  display: flex;
-  justify-content: space-around;
-  &__media-type {
-    display: flex;
-    color: red;
-  }
-  &__time {
-    display: flex;
-    color: red;
-  }
-  &__url {
-    display: flex;
-    color: red;
-  }
-  &__title {
-    display: flex;
-    color: red;
-  }
-  &__priority {
-    display: flex;
-    color: red;
-  }
-}
-.a-better-workplace-list {
+git .a-better-workplace-list {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-  
+
 table {
   border: 2px solid forestgreen;
   width: 800px;
   height: 200px;
 }
-  
+
 th {
   border-bottom: 1px solid black;
 }
-  
+
 td {
   text-align: center;
 }
