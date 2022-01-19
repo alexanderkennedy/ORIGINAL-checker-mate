@@ -8,34 +8,6 @@ import { Link } from 'react-router-dom';
 
 const playerHeight = "84.375"
 const playerWidth = "150"
-// const MainListData = [
-//     {
-//       "mediaType": "t",
-//       "min": "5",
-//       "url": "https://www.treesprintplanting.com/expectations.html",
-//       "title": "Tree-Sprint Policy on Bullying and Harassment",
-//       "priority": "5",
-//       "watched":false
-//     },
-//     {
-//       "mediaType": "t",
-//       "min": "5",
-//       "url": "https://www.worksafebc.com/en/health-safety/hazards-exposures/bullying-harassment",
-//       "title": "Explanation of Legal definition of Bullying and Harassment",
-//       "priority": "5",
-//       "watched":false
-//     },
-//     {
-//       "mediaType": "v",
-//       "min": "7",
-//       "url":"https://www.youtube.com/embed/497RHaz_ajg",
-//       // "url": <iframe width={playerWidth} height={playerHeight} src="https://www.youtube.com/embed/497RHaz_ajg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>,
-//       "title": "Video account of bullying from WorkSafe BC",
-//       "priority": "4",
-//       "watched":false
-//     }
-//   ]
-
 
 class MainList extends Component {
   state = { 
@@ -46,22 +18,11 @@ class MainList extends Component {
   componentDidMount() {
     this.getABetterWorkplace()
     this.getFirstAid()
-    // this.getFitness()
-    // All this function will  do is get the data and put it into the state
-    // axios 
-    //   .get('http://localhost:8080/lists')
-    //   .then((res) => {
-    //     this.setState({
-    //       aBetterWorkplace: res.data
-    //     })
-    //     // console.log("a better workplace", res.data)
-    //   })
-    //   .catch((err) => console.log(err));
   }
 
  getABetterWorkplace(){ 
   axios 
-  .get('http://localhost:8080/lists')
+  .get('http://localhost:8080/lists/a-better-workplace')
   .then((res) => {
     this.setState({
       aBetterWorkplace: res.data
@@ -72,7 +33,15 @@ class MainList extends Component {
  }
 
  getFirstAid(){
-   console.log("hello, I am get first aid")
+  axios 
+  .get('http://localhost:8080/lists/first-aid')
+  .then((res) => {
+    this.setState({
+      firstAid: res.data
+    })
+    // console.log("first aid", res.data)
+  })
+  .catch((err) => console.log(err));
  }
  
 handleCheckboxChange = event => {
@@ -92,13 +61,6 @@ handleCheckboxChange = event => {
                 <th>PRIORITY</th>
                  <th>WATCHED</th>
               </tr>
-              {/* <tr>
-                <td><img src={purplePlayIcon} alt="purple play icon" /></td>
-                <td>7</td>
-                <td>https://www.summitplanting.com/expectations.html</td>
-                <td>Tree-Sprint Policy on Bullying and Harassment</td>
-                <td>MANDATORY</td>
-              </tr> */}
              {this.state.aBetterWorkplace.map((val, key) => 
                 <tr key={key}>
                   <td>{val.mediaType}<td><img src={purplePlayIcon} alt="purple play icon" /></td></td>

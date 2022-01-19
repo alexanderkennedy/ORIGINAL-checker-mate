@@ -1,23 +1,26 @@
 [
   {
-    "media-type": "v",
-    "time-in-minutes": "5",
+    "mediaType": "v",
+    "min": "5",
     "url": "https://www.youtube.com/watch?v=ea1RJUOiNfQ&ab_channel=StJohnAmbulance",
-    " Title": "How to do the Primary Survey - First Aid Training - St John Ambulance",
-    "Priority": "4"
+    "title": "How to do the Primary Survey - First Aid Training - St John Ambulance",
+    "priority": "4",
+    "watched":false
   },
   {
-    "media-type": "v",
-    "time-in-minutes": "2",
+    "mediaType": "v",
+    "min": "2",
     "url": "https://www.youtube.com/watch?v=jYtJS1PtNq0&ab_channel=AmericanRedCross",
-    " Title": "First Aid for Severe Bleeding",
-    "Priority": "4"
+    "title": "First Aid for Severe Bleeding",
+    "priority": "4",
+    "watched":false
   },
   {
-    "media-type": "t",
-    "time-in-minutes": "5",
+    "mediaType": "t",
+    "min": "5",
     "url": "https://www.redcross.org.uk/first-aid/learn-first-aid/allergic-reaction",
-    " Title": "Learn first aid for someone having a severe allergic reaction (anaphylaxis)",
-    "Priority": "4"
+    "title": "Learn first aid for someone having a severe allergic reaction (anaphylaxis)",
+    "priority": "4",
+    "watched":false
   }
 ]

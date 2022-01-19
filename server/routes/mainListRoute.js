@@ -6,19 +6,32 @@ const mainListRoute = Router();
 const express = require("express");
 mainListRoute.use(express.static("public"));
 
-const readFile = () => {
-  const aBetterWorkplaceData = fs.readFileSync(
-    "./data/a-better-workplace.json"
-  );
-  return JSON.parse(aBetterWorkplaceData);
+// const readFile = () => {
+//   const aBetterWorkplaceData = fs.readFileSync(
+//     "./data/a-better-workplace.json"
+//   );
+//   const firstAidData = fs.readFileSync(
+//     "./data/first-aid.json"
+//   );
+//   return JSON.parse(aBetterWorkplaceData);
+//   return JSON.parse(firstaidData);
+// };
+// parameter jsonData is relative path to data
+//format: "./data/a-better-workplace.json"
+const readFile = (jsonData) => {
+  const allJsonsData = fs.readFileSync(jsonData);
+  return JSON.parse(allJsonsData);
 };
 
-
-// get entire list
-mainListRoute.get("/", (req, res) => {
-  let data = readFile();
+// get entire a-better-workplace json list
+mainListRoute.get("/a-better-workplace", (req, res) => {
+  let data = readFile("./data/a-better-workplace.json");
   res.status(200).json(data);
 });
-
+// get entire first-aid json list
+mainListRoute.get("/first-aid", (req, res) => {
+  let data = readFile("./data/first-aid.json");
+  res.status(200).json(data);
+});
 
 module.exports = mainListRoute;
