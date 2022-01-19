@@ -12,13 +12,31 @@ const playerWidth = "150"
 class MainList extends Component {
   state = { 
     checked: false, 
-    aBetterWorkplace: []
+    aBetterWorkplace: [],
+    firstAid:[]
    }
 
   componentDidMount() {
-    this.getABetterWorkplace()
-    this.getFirstAid()
+    // this.getABetterWorkplace()
+    // this.getFirstAid()
+    this.getAllLists()
   }
+
+  // Attempt to merge both axios requests...
+
+
+  getAllLists(){ 
+    axios 
+    .get('http://localhost:8080/lists/')
+    .then((res) => {
+      this.setState({
+        aBetterWorkplace: res.data.workPlaceData , 
+        firstAid: res.data.firstAidData
+      })
+      // console.log("a better workplace", res.data)
+    })
+    .catch((err) => console.log(err));
+   }
 
  getABetterWorkplace(){ 
   axios 
@@ -62,6 +80,34 @@ handleCheckboxChange = event => {
                  <th>WATCHED</th>
               </tr>
              {this.state.aBetterWorkplace.map((val, key) => 
+                <tr key={key}>
+                  <td>{val.mediaType}<td><img src={purplePlayIcon} alt="purple play icon" /></td></td>
+                  <td>{val.min}</td>
+                  <td><a href={val.url} target="_blank">{val.title}</a></td>
+                  <td>{val.priority}</td>
+                  <td> <Checkbox
+            // checked={this.state.checked}
+            onChange={this.handleCheckboxChange}
+          /></td>
+                </tr>
+              )}    
+ 
+              <tr>
+                <th>MEDIA TYPE</th>
+                <th>TIME IN MINUTES</th>
+                {/* <th>SOURCE</th> */}
+                <th>TITLE</th>
+                <th>PRIORITY</th>
+                 <th>WATCHED</th>
+              </tr>
+
+
+
+
+
+
+
+               {this.state.firstAid.map((val, key) => 
                 <tr key={key}>
                   <td>{val.mediaType}<td><img src={purplePlayIcon} alt="purple play icon" /></td></td>
                   <td>{val.min}</td>

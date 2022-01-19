@@ -22,7 +22,11 @@ const readFile = (jsonData) => {
   const allJsonsData = fs.readFileSync(jsonData);
   return JSON.parse(allJsonsData);
 };
-
+mainListRoute.get("/", (req, res) => {
+  let workPlaceData = readFile("./data/a-better-workplace.json");
+  let firstAidData = readFile("./data/first-aid.json");
+  res.status(200).json({ workPlaceData, firstAidData });
+});
 // get entire a-better-workplace json list
 mainListRoute.get("/a-better-workplace", (req, res) => {
   let data = readFile("./data/a-better-workplace.json");
