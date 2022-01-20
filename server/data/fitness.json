@@ -1,23 +1,26 @@
 [
   {
-    "media-type": "v",
-    "time-in-minutes": "3",
+    "mediaType": "v",
+    "min": "3",
     "url": "https://www.youtube.com/watch?v=LlDNef_Ztsc&t=13s&ab_channel=GMBFitness",
-    " Title": "Hollow Body Hold Progression - Gymnastic Core Exercis",
-    "Priority": "1"
+    "title": "Hollow Body Hold Progression - Gymnastic Core Exercis",
+    "priority": "1",
+    "watched": false
   },
   {
-    "media-type": "v",
-    "time-in-minutes": "1",
+    "mediaType": "v",
+    "min": "1",
     "url": "https://www.youtube.com/watch?v=fcnv4gyMzf8&ab_channel=LondonBackPainClinic",
-    " Title": "How to perform a cat cow stretch for back pain",
-    "Priority": "1"
+    "title": "How to perform a cat cow stretch for back pain",
+    "priority": "1",
+    "watched": false
   },
   {
-    "media-type": "v",
-    "time-in-minutes": "3",
+    "mediaType": "v",
+    "min": "3",
     "url": "https://www.youtube.com/watch?v=d4IPCXI8GQc&ab_channel=SchoolofCalisthenics",
-    " Title": "How To COSSACK Squat Tutorial // School of Calisthenics",
-    "Priority": "1"
+    "title": "How To COSSACK Squat Tutorial // School of Calisthenics",
+    "priority": "1",
+    "watched": false
   }
 ]

@@ -25,7 +25,8 @@ const readFile = (jsonData) => {
 mainListRoute.get("/", (req, res) => {
   let workPlaceData = readFile("./data/a-better-workplace.json");
   let firstAidData = readFile("./data/first-aid.json");
-  res.status(200).json({ workPlaceData, firstAidData });
+  let fitnessData = readFile("./data/fitness.json");
+  res.status(200).json({ workPlaceData, firstAidData, fitnessData });
 });
 // get entire a-better-workplace json list
 mainListRoute.get("/a-better-workplace", (req, res) => {
@@ -37,5 +38,14 @@ mainListRoute.get("/first-aid", (req, res) => {
   let data = readFile("./data/first-aid.json");
   res.status(200).json(data);
 });
+// get entire fitness json list
+mainListRoute.get("/fitness", (req, res) => {
+  let data = readFile("./data/fitness.json");
+  res.status(200).json(data);
+});
+
+
+
+
 
 module.exports = mainListRoute;

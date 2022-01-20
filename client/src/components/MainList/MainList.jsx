@@ -13,7 +13,8 @@ class MainList extends Component {
   state = { 
     checked: false, 
     aBetterWorkplace: [],
-    firstAid:[]
+    firstAid:[],
+    fitness:[]
    }
 
   componentDidMount() {
@@ -31,7 +32,8 @@ class MainList extends Component {
     .then((res) => {
       this.setState({
         aBetterWorkplace: res.data.workPlaceData , 
-        firstAid: res.data.firstAidData
+        firstAid: res.data.firstAidData,
+        fitness: res.data.fitnessData
       })
       // console.log("a better workplace", res.data)
     })
@@ -49,6 +51,10 @@ class MainList extends Component {
   })
   .catch((err) => console.log(err));
  }
+  axios
+  // .put('http://localhost:8080/lists/a-better-workplace')
+// Put request for the checkmark icon. 
+
 
  getFirstAid(){
   axios 
@@ -61,20 +67,31 @@ class MainList extends Component {
   })
   .catch((err) => console.log(err));
  }
+
+ getFitness(){ 
+  axios 
+  .get('http://localhost:8080/lists/fitness')
+  .then((res) => {
+    this.setState({
+      fitness: res.data
+    })
+    // console.log("fitness", res.data)
+  })
+  .catch((err) => console.log(err));
+ }
  
 handleCheckboxChange = event => {
     this.setState({ checked: event.target.checked })
   }
   render() {
 
-    console.log("this.state.aBetterWorkplace", this.state.aBetterWorkplace)
+    // console.log("this.state.aBetterWorkplace", this.state.aBetterWorkplace)
         return (
-            <div className="a-better-workplace-list">  
+            <div className="full-list">  
             <table>
               <tr>
                 <th>MEDIA TYPE</th>
                 <th>TIME IN MINUTES</th>
-                {/* <th>SOURCE</th> */}
                 <th>TITLE</th>
                 <th>PRIORITY</th>
                  <th>WATCHED</th>
@@ -86,27 +103,18 @@ handleCheckboxChange = event => {
                   <td><a href={val.url} target="_blank">{val.title}</a></td>
                   <td>{val.priority}</td>
                   <td> <Checkbox
-            // checked={this.state.checked}
             onChange={this.handleCheckboxChange}
           /></td>
                 </tr>
               )}    
- 
+ {/* BREAK */}
               <tr>
                 <th>MEDIA TYPE</th>
                 <th>TIME IN MINUTES</th>
-                {/* <th>SOURCE</th> */}
                 <th>TITLE</th>
                 <th>PRIORITY</th>
                  <th>WATCHED</th>
               </tr>
-
-
-
-
-
-
-
                {this.state.firstAid.map((val, key) => 
                 <tr key={key}>
                   <td>{val.mediaType}<td><img src={purplePlayIcon} alt="purple play icon" /></td></td>
@@ -114,11 +122,29 @@ handleCheckboxChange = event => {
                   <td><a href={val.url} target="_blank">{val.title}</a></td>
                   <td>{val.priority}</td>
                   <td> <Checkbox
-            // checked={this.state.checked}
             onChange={this.handleCheckboxChange}
           /></td>
                 </tr>
-              )}    
+                )} 
+                 <tr>
+                <th>MEDIA TYPE</th>
+                 <th>TIME IN MINUTES</th>
+                 <th>TITLE</th>
+                 <th>PRIORITY</th>
+                  <th>WATCHED</th>
+               </tr>
+                {this.state.fitness.map((val, key) => 
+                <tr key={key}>
+                  <td>{val.mediaType}<td><img src={purplePlayIcon} alt="purple play icon" /></td></td>
+                  <td>{val.min}</td>
+                  <td><a href={val.url} target="_blank">{val.title}</a></td>
+                  <td>{val.priority}</td>
+                  <td> <Checkbox
+            onChange={this.handleCheckboxChange}
+          /></td>
+                </tr>
+                )} 
+                
             </table>
 
             {/* <div className="youtube">
