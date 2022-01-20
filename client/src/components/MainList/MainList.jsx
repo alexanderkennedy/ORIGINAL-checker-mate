@@ -10,8 +10,11 @@ const playerHeight = "84.375"
 const playerWidth = "150"
 
 class MainList extends Component {
-  state = { 
-    checked: false, 
+  state = {
+
+    // checked: false, 
+    // aBetterWorkplaceItem1: false,
+    // whatever you put in state, put in the actual inputs as well. (So names are matched)
     aBetterWorkplace: [],
     firstAid:[],
     fitness:[]
@@ -51,10 +54,19 @@ class MainList extends Component {
   })
   .catch((err) => console.log(err));
  }
-  axios
+ handleCheckboxChangeBetterWorkplace = event => {
+  this.setState({ checked: event.target.checked })
+  // {console.log("checked: event.target.checked",checked: event.target.checked)}
+  const aBetterWorkplace = 
+  this.setState({ checked: aBetterWorkplace.lists.checked})
+  // Instead set state for the LIST that's in state and specifically target the WATCHED key.
+  // THe WATCHED key is also the true and false... but it's specific 
+  // axios.put("http://localhost:8080/lists").then((result))
+}
+  // axios
   // .put('http://localhost:8080/lists/a-better-workplace')
 // Put request for the checkmark icon. 
-
+// THIS IS A TEST FUNCTION NOT FOR USE
 // function updatePost() {
 //   axios
 //     .put(`${baseURL}/1`, {
@@ -89,16 +101,35 @@ class MainList extends Component {
   .catch((err) => console.log(err));
  }
  
-handleCheckboxChange = event => {
-    this.setState({ checked: event.target.checked })
-    // axios.put("http://localhost:8080/lists").then((result))
-  }
+ handleCheckboxChange = (e)=>{
+  //  this.setState({[e.target.name]:e.target.value})
+   console.log("e.target",(e.target));
+// START OF COPIED CODE
+e.preventDefault();
+
+const idToUpdate = this.props.match.params.inventoryID;
+
+const updatedInventory = {
+  checked: e.target.value 
+  
+};
+axios
+.put(
+  `http://localhost:8080/inventories/${idToUpdate}/edit`,
+  updatedInventory
+)
+.then(() => this.props.history.push(`/inventories`))
+.catch((err) => console.log(err));
+
+  //  END OF COPIED CODE
+ }
   render() {
 
     // console.log("this.state.aBetterWorkplace", this.state.aBetterWorkplace)
         return (
             <div className="full-list">  
             <table>
+              <thead>
               <tr>
                 <th>MEDIA TYPE</th>
                 <th>TIME IN MINUTES</th>
@@ -106,17 +137,19 @@ handleCheckboxChange = event => {
                 <th>PRIORITY</th>
                  <th>WATCHED</th>
               </tr>
-             {this.state.aBetterWorkplace.map((val, key) => 
-                <tr key={key}>
-                  <td>{val.mediaType}<td><img src={purplePlayIcon} alt="purple play icon" /></td></td>
+              </thead>
+              <tbody>
+             {this.state.aBetterWorkplace.map((val) => 
+                <tr key={val.id}>
+                  <td>{val.mediaType}</td>
                   <td>{val.min}</td>
                   <td><a href={val.url} target="_blank">{val.title}</a></td>
                   <td>{val.priority}</td>
-                  <td> <Checkbox checked={val.watched}
+                  <td><input type="checkbox" name={val.title} value={val.watched}
             onChange={this.handleCheckboxChange}
           /></td>
                 </tr>
-              )}    
+              )}   
  {/* BREAK */}
               <tr>
                 <th>MEDIA TYPE</th>
@@ -127,7 +160,7 @@ handleCheckboxChange = event => {
               </tr>
                {this.state.firstAid.map((val, key) => 
                 <tr key={key}>
-                  <td>{val.mediaType}<td><img src={purplePlayIcon} alt="purple play icon" /></td></td>
+                  <td>{val.mediaType}</td>
                   <td>{val.min}</td>
                   <td><a href={val.url} target="_blank">{val.title}</a></td>
                   <td>{val.priority}</td>
@@ -145,7 +178,7 @@ handleCheckboxChange = event => {
                </tr>
                 {this.state.fitness.map((val, key) => 
                 <tr key={key}>
-                  <td>{val.mediaType}<td><img src={purplePlayIcon} alt="purple play icon" /></td></td>
+                  <td>{val.mediaType}</td>
                   <td>{val.min}</td>
                   <td><a href={val.url} target="_blank">{val.title}</a></td>
                   <td>{val.priority}</td>
@@ -154,6 +187,7 @@ handleCheckboxChange = event => {
           /></td>
                 </tr>
                 )} 
+                </tbody> 
                 
             </table>
 
