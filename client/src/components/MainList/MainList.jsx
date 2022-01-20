@@ -55,6 +55,15 @@ class MainList extends Component {
   // .put('http://localhost:8080/lists/a-better-workplace')
 // Put request for the checkmark icon. 
 
+// function updatePost() {
+//   axios
+//     .put(`${baseURL}/1`, {
+//       title: "Hello World!",
+//       body: "This is an updated post."
+//     })
+//     .then((response) => {
+//       setPost(response.data);
+//     });
 
  getFirstAid(){
   axios 
@@ -82,6 +91,7 @@ class MainList extends Component {
  
 handleCheckboxChange = event => {
     this.setState({ checked: event.target.checked })
+    // axios.put("http://localhost:8080/lists").then((result))
   }
   render() {
 
@@ -102,7 +112,7 @@ handleCheckboxChange = event => {
                   <td>{val.min}</td>
                   <td><a href={val.url} target="_blank">{val.title}</a></td>
                   <td>{val.priority}</td>
-                  <td> <Checkbox
+                  <td> <Checkbox checked={val.watched}
             onChange={this.handleCheckboxChange}
           /></td>
                 </tr>
@@ -121,7 +131,7 @@ handleCheckboxChange = event => {
                   <td>{val.min}</td>
                   <td><a href={val.url} target="_blank">{val.title}</a></td>
                   <td>{val.priority}</td>
-                  <td> <Checkbox
+                  <td> <Checkbox checked={val.watched}
             onChange={this.handleCheckboxChange}
           /></td>
                 </tr>
@@ -139,7 +149,7 @@ handleCheckboxChange = event => {
                   <td>{val.min}</td>
                   <td><a href={val.url} target="_blank">{val.title}</a></td>
                   <td>{val.priority}</td>
-                  <td> <Checkbox
+                  <td> <Checkbox checked={val.watched}
             onChange={this.handleCheckboxChange}
           /></td>
                 </tr>

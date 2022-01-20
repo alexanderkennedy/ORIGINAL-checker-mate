@@ -22,6 +22,39 @@ const readFile = (jsonData) => {
   const allJsonsData = fs.readFileSync(jsonData);
   return JSON.parse(allJsonsData);
 };
+console.log(readFile("./data/a-better-workplace.json"));
+
+// THis is how to test a backend function without making a front end funciton that's connected to it. 
+
+
+
+const writeFile = (jsonData,newData) => {
+
+  const allJsonsData = fs.readFileSync(jsonData);
+  // I want to CHANGE allJsonsData 
+  // THen I want to save the file with the NEW allJSONS' data. 
+  return JSON.parse(allJsonData);
+
+}
+// One idea is to make it so the writeFile changes json in the backend so you can check it
+mainListRoute.put("/list-item/:id", (req, res) => {
+ const id = req.params.id
+
+}
+
+)
+//  WITHIN the put request a single item for a single task)
+// Put request Front end. 
+// (Sub task within the put request) Once single row item changes "Watched" to true. Back end.
+
+// DO NOT need individual get request Front end (optional...). 
+
+//  Get it to write to the json
+
+// and THEN that info would be sent BACK to the front end.
+// Then set state AGAIN the page with this response.
+// Setting state triggers re-render
+
 mainListRoute.get("/", (req, res) => {
   let workPlaceData = readFile("./data/a-better-workplace.json");
   let firstAidData = readFile("./data/first-aid.json");
@@ -33,6 +66,11 @@ mainListRoute.get("/a-better-workplace", (req, res) => {
   let data = readFile("./data/a-better-workplace.json");
   res.status(200).json(data);
 });
+
+
+
+
+
 // get entire first-aid json list
 mainListRoute.get("/first-aid", (req, res) => {
   let data = readFile("./data/first-aid.json");
