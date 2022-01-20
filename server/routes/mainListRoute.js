@@ -28,21 +28,45 @@ console.log(readFile("./data/a-better-workplace.json"));
 
 
 
-const writeFile = (jsonData,newData) => {
+// const writeFile = (jsonData,newData) => {
 
-  const allJsonsData = fs.readFileSync(jsonData);
-  // I want to CHANGE allJsonsData 
-  // THen I want to save the file with the NEW allJSONS' data. 
-  return JSON.parse(allJsonData);
+//   const allJsonsData = fs.readFileSync(jsonData);
+//   // I want to CHANGE allJsonsData 
+//   // THen I want to save the file with the NEW allJSONS' data. 
+//   return JSON.parse(allJsonData);
 
-}
+// }
 // One idea is to make it so the writeFile changes json in the backend so you can check it
-mainListRoute.put("/list-item/:id", (req, res) => {
- const id = req.params.id
+// mainListRoute.put("/list-item/:id", (req, res) => {
+//  const id = req.params.id
 
-}
+// }
 
-)
+// )
+const writeFile = (aBetterWorkplaceData) => {
+  fs.writeFileSync(
+    "./data/a-better-workplace.json",
+    JSON.stringify(aBetterWorkplaceData, null, 2)
+  );
+};
+mainListRoute.put(`/:aBetterWorkplaceID`, (req, res) => {
+  console.log("request.params.aBetterWorkplaceID",req.params.aBetterWorkplaceID)
+  console.log("req.body.watched",req.body.watched)
+  let allJsonsData = readFile("./data/a-better-workplace.json");
+
+  let aBetterWorkplaceToUpdate = allJsonsData.find(
+    (aBetterWorkplace) => aBetterWorkplace.id === req.params.aBetterWorkplaceID
+  );
+  console.log("aBetterWorkplaceToUpdate",aBetterWorkplaceToUpdate)
+  aBetterWorkplaceToUpdate.watched = req.body.watched;
+
+  writeFile(allJsonsData);
+  // console.log("alljsonsData",allJsonsData);
+  res.status(200).json(aBetterWorkplaceToUpdate);
+});
+
+
+
 //  WITHIN the put request a single item for a single task)
 // Put request Front end. 
 // (Sub task within the put request) Once single row item changes "Watched" to true. Back end.
