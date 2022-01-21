@@ -20,7 +20,8 @@ class MainList extends Component {
   };
 
   componentDidMount() {
-    // this.getABetterWorkplace()
+    console.log("mounted");
+    this.getABetterWorkplace();
     // this.getFirstAid()
     this.getAllLists();
   }
@@ -31,11 +32,14 @@ class MainList extends Component {
     axios
       .get("http://localhost:8080/lists/")
       .then((res) => {
-        this.setState({
-          aBetterWorkplace: res.data.workPlaceData,
-          firstAid: res.data.firstAidData,
-          fitness: res.data.fitnessData,
-        });
+        this.setState(
+          {
+            aBetterWorkplace: res.data.workPlaceData,
+            firstAid: res.data.firstAidData,
+            fitness: res.data.fitnessData,
+          },
+          () => console.log(this.state)
+        );
         // console.log("a better workplace", res.data)
       })
       .catch((err) => console.log(err));
@@ -45,6 +49,7 @@ class MainList extends Component {
     axios
       .get("http://localhost:8080/lists/a-better-workplace")
       .then((res) => {
+        console.log(res.data);
         this.setState({
           aBetterWorkplace: res.data,
         });
@@ -100,7 +105,7 @@ class MainList extends Component {
       .catch((err) => console.log(err));
   }
 
-  handleCheckboxChange = (e,idToUpdate) => {
+  handleCheckboxChange = (e, idToUpdate) => {
     //  this.setState({[e.target.name]:e.target.value})
     console.log("e.target", e.target);
 
@@ -108,7 +113,6 @@ class MainList extends Component {
     e.preventDefault();
     console.log(this.props);
     // const idToUpdate = this.props.match.params.aBetterWorkplaceID;
-    
 
     const updatedABetterWorkplace = {
       watched: e.target.checked,
@@ -129,7 +133,7 @@ class MainList extends Component {
     return (
       <div className="full-list">
         <table>
-          <thead>
+          <thead className="header__workplace">
             <tr>
               <th>MEDIA TYPE</th>
               <th>TIME IN MINUTES</th>
@@ -154,13 +158,14 @@ class MainList extends Component {
                     type="checkbox"
                     name={val.title}
                     value={val.watched}
-                    onChange={(e)=>this.handleCheckboxChange(e,val.id)}
+                    checked={val.watched}
+                    onChange={(e) => this.handleCheckboxChange(e, val.id)}
                   />
                 </td>
               </tr>
             ))}
             {/* BREAK */}
-            <tr>
+            <tr className="firstAid">
               <th>MEDIA TYPE</th>
               <th>TIME IN MINUTES</th>
               <th>TITLE</th>
@@ -186,7 +191,7 @@ class MainList extends Component {
                 </td>
               </tr>
             ))}
-            <tr>
+            <tr className="fitness">
               <th>MEDIA TYPE</th>
               <th>TIME IN MINUTES</th>
               <th>TITLE</th>
