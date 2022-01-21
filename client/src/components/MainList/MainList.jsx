@@ -21,7 +21,7 @@ class MainList extends Component {
 
   componentDidMount() {
     console.log("mounted");
-    this.getABetterWorkplace();
+    // this.getABetterWorkplace();
     // this.getFirstAid()
     this.getAllLists();
   }
@@ -105,7 +105,7 @@ class MainList extends Component {
       .catch((err) => console.log(err));
   }
 
-  handleCheckboxChange = (e, idToUpdate) => {
+  handleCheckboxChange = (e, idToUpdate, listName) => {
     //  this.setState({[e.target.name]:e.target.value})
     console.log("e.target", e.target);
 
@@ -116,12 +116,16 @@ class MainList extends Component {
 
     const updatedABetterWorkplace = {
       watched: e.target.checked,
+      listName: listName,
     };
-    axios.put(
-      `http://localhost:8080/lists/${idToUpdate}`,
-      updatedABetterWorkplace
-    ).then((res) => {
-      this.getAllLists();
+    console.log("updatedABetterWorkplace", updatedABetterWorkplace);
+    console.log("idToUpdate", idToUpdate);
+    console.log("listName", listName);
+    console.log("this.state.firstAid",this.state.firstAid);
+    axios
+      .put(`http://localhost:8080/lists/${idToUpdate}`, updatedABetterWorkplace)
+      .then((res) => {
+        this.getAllLists();
       });
 
     // componentDidMount() {
@@ -136,10 +140,9 @@ class MainList extends Component {
     // }
 
     // Axios.get
-// remember these requests are asynchronous and return promises
-//  the wya to deal with that is with .then
-// so next the .then request in the .put request. 
-
+    // remember these requests are asynchronous and return promises
+    //  the wya to deal with that is with .then
+    // so next the .then request in the .put request.
 
     // console
     //   .log("idToupdate"(idToUpdate))
@@ -179,7 +182,9 @@ class MainList extends Component {
                     name={val.title}
                     value={val.watched}
                     checked={val.watched}
-                    onChange={(e) => this.handleCheckboxChange(e, val.id)}
+                    onChange={(e) =>
+                      this.handleCheckboxChange(e, val.id, val.listName)
+                    }
                   />
                 </td>
               </tr>
@@ -206,7 +211,9 @@ class MainList extends Component {
                   {" "}
                   <Checkbox
                     checked={val.watched}
-                    onChange={this.handleCheckboxChange}
+                    onChange={(e) =>
+                      this.handleCheckboxChange(e, val.id, val.listName)
+                    }
                   />
                 </td>
               </tr>
@@ -232,7 +239,9 @@ class MainList extends Component {
                   {" "}
                   <Checkbox
                     checked={val.watched}
-                    onChange={this.handleCheckboxChange}
+                    onChange={(e) =>
+                      this.handleCheckboxChange(e, val.id, val.listName)
+                    }
                   />
                 </td>
               </tr>

@@ -1,29 +1,32 @@
 [
   {
+    "listName": "a-better-workplace",
     "id": "1",
     "mediaType": "t",
     "min": "5",
     "url": "https://www.treesprintplanting.com/expectations.html",
     "title": "Tree-Sprint Policy on Bullying and Harassment",
     "priority": "4",
-    "watched": false
+    "watched": true
   },
   {
+    "listName": "a-better-workplace",
     "id": "2",
     "mediaType": "t",
     "min": "5",
     "url": "https://www.worksafebc.com/en/health-safety/hazards-exposures/bullying-harassment",
     "title": "Explanation of Legal definition of Bullying and Harassment",
     "priority": "5",
-    "watched": false
+    "watched": true
   },
   {
+    "listName": "a-better-workplace",
     "id": "3",
     "mediaType": "v",
     "min": "7",
     "url": "https://www.youtube.com/embed/497RHaz_ajg",
     "title": "Video account of bullying from WorkSafe BC",
     "priority": "4",
-    "watched": false
+    "watched": true
   }
 ]
