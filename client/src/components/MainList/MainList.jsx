@@ -120,7 +120,27 @@ class MainList extends Component {
     axios.put(
       `http://localhost:8080/lists/${idToUpdate}`,
       updatedABetterWorkplace
-    );
+    ).then((res) => {
+      this.getAllLists();
+      });
+
+    // componentDidMount() {
+    //   axios
+    //     .get(`http://localhost:8080/lists/${idToUpdate}`)
+    //     .then((res) => {
+    //       this.setState({
+    //         selectedInventory: res.data,
+    //       });
+    //     })
+    //     .catch((err) => console.log(err));
+    // }
+
+    // Axios.get
+// remember these requests are asynchronous and return promises
+//  the wya to deal with that is with .then
+// so next the .then request in the .put request. 
+
+
     // console
     //   .log("idToupdate"(idToUpdate))
     //   .then(() => this.props.history.push(`/lists`))
