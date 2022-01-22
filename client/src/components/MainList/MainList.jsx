@@ -192,6 +192,7 @@ class MainList extends Component {
                 </td>
               </tr>
             ))}
+            </tbody>
             {/* BREAK */}
             <tr className="firstAid">
               <th>MEDIA TYPE</th>
@@ -221,6 +222,7 @@ class MainList extends Component {
                 </td>
               </tr>
             ))}
+            {/*  */}
             <tr className="fitness">
               <th>MEDIA TYPE</th>
               <th>TIME IN MINUTES</th>
@@ -228,6 +230,7 @@ class MainList extends Component {
               <th>PRIORITY</th>
               <th>WATCHED</th>
             </tr>
+            <tbody>
             {this.state.fitness.map((val, key) => (
               <tr key={key}>
                 <td>{val.mediaType}</td>
@@ -240,7 +243,7 @@ class MainList extends Component {
                 <td>{val.priority}</td>
                 <td>
                   {" "}
-                  <Checkbox
+                  <Checkbox className=".slide-bck-left"
                     checked={val.watched}
                     onChange={(e) =>
                       this.handleCheckboxChange(e, val.id, val.listName)
