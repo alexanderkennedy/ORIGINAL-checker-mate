@@ -1,0 +1,38 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/colours.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+.page-header {
+  background-color: $ISGraphite;
+  @include flex(center, center, column);
+  color: $ISCloud;
+  padding: 1.25rem 1rem 5rem 1rem;
+  @include screen-greater-than(tablet) {
+    @include flex(space-between, center, row);
+    padding: 1rem 1rem 4rem 1rem;
+  }
+}
+
+.navbar {
+  @include flex(space-between, center, row);
+  padding: 0.5rem 0;
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    line-height: 2.15rem;
+    border-radius: 1.25rem;
+    &:hover {
+      text-decoration: underline;
+      color: $ISWhite;
+    }
+    display: block;
+    width: 9rem;
+    text-align: center;
+    margin: 0 0.5rem;
+  }
+
+  &__link--selected {
+    background-color: $ISBlack;
+    color: $ISWhite;
+  }
+}

@@ -12,8 +12,6 @@ const playerWidth = "150";
 
 class MainList extends Component {
   state = {
-    // checked: false,
-    // aBetterWorkplaceItem1: false,
     // whatever you put in state, put in the actual inputs as well. (So names are matched)
     aBetterWorkplace: [],
     firstAid: [],
@@ -23,12 +21,8 @@ class MainList extends Component {
 
   componentDidMount() {
     console.log("mounted");
-    // this.getABetterWorkplace();
-    // this.getFirstAid()
     this.getAllLists();
   }
-
-  // Attempt to merge both axios requests...
 
   getAllLists() {
     axios
@@ -43,7 +37,6 @@ class MainList extends Component {
           },
           () => console.log(this.state)
         );
-        // console.log("a better workplace", res.data)
       })
       .catch((err) => console.log(err));
   }
@@ -66,24 +59,8 @@ class MainList extends Component {
     const aBetterWorkplace = this.setState({
       checked: aBetterWorkplace.lists.checked,
     });
-    // Instead set state for the LIST that's in state and specifically target the WATCHED key.
-    // THe WATCHED key is also the true and false... but it's specific
-    // axios.put("http://localhost:8080/lists").then((result))
   };
-  // axios
-  // .put('http://localhost:8080/lists/a-better-workplace')
-  // Put request for the checkmark icon.
-  // THIS IS A TEST FUNCTION NOT FOR USE
-  // function updatePost() {
-  //   axios
-  //     .put(`${baseURL}/1`, {
-  //       title: "Hello World!",
-  //       body: "This is an updated post."
-  //     })
-  //     .then((response) => {
-  //       setPost(response.data);
-  //     });
-
+  
   getFirstAid() {
     axios
       .get("http://localhost:8080/lists/first-aid")
@@ -109,14 +86,9 @@ class MainList extends Component {
   }
 
   handleCheckboxChange = (e, idToUpdate, listName) => {
-    //  this.setState({[e.target.name]:e.target.value})
     console.log("e.target", e.target);
-
-    // START OF COPIED CODE
     e.preventDefault();
     console.log(this.props);
-    // const idToUpdate = this.props.match.params.aBetterWorkplaceID;
-
     const updatedABetterWorkplace = {
       watched: e.target.checked,
       listName: listName,
@@ -131,28 +103,6 @@ class MainList extends Component {
         this.getAllLists();
       });
 
-    // componentDidMount() {
-    //   axios
-    //     .get(`http://localhost:8080/lists/${idToUpdate}`)
-    //     .then((res) => {
-    //       this.setState({
-    //         selectedInventory: res.data,
-    //       });
-    //     })
-    //     .catch((err) => console.log(err));
-    // }
-
-    // Axios.get
-    // remember these requests are asynchronous and return promises
-    //  the wya to deal with that is with .then
-    // so next the .then request in the .put request.
-
-    // console
-    //   .log("idToupdate"(idToUpdate))
-    //   .then(() => this.props.history.push(`/lists`))
-    //   .catch((err) => console.log(err));
-
-    //  END OF COPIED CODE
   };
   render() {
     // console.log("this.state.aBetterWorkplace", this.state.aBetterWorkplace)
@@ -180,10 +130,7 @@ class MainList extends Component {
                 </td>
                 <td>{val.priority}</td>
                 <td>
-                  <input
-                    type="checkbox"
-                    name={val.title}
-                    value={val.watched}
+                 <Checkbox
                     checked={val.watched}
                     onChange={(e) =>
                       this.handleCheckboxChange(e, val.id, val.listName)
