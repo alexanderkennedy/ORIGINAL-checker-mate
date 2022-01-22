@@ -5,6 +5,7 @@ import Checkbox from "../Checkbox/Checkbox";
 import purplePlayIcon from "../../assets/images/icons/purplePlayIcon.svg";
 import "./MainList.scss";
 import { Link } from "react-router-dom";
+import Tally from "../../components/Tally/Tally";
 
 const playerHeight = "84.375";
 const playerWidth = "150";
@@ -17,6 +18,7 @@ class MainList extends Component {
     aBetterWorkplace: [],
     firstAid: [],
     fitness: [],
+    loading:true,
   };
 
   componentDidMount() {
@@ -37,6 +39,7 @@ class MainList extends Component {
             aBetterWorkplace: res.data.workPlaceData,
             firstAid: res.data.firstAidData,
             fitness: res.data.fitnessData,
+            loading:false
           },
           () => console.log(this.state)
         );
@@ -121,7 +124,7 @@ class MainList extends Component {
     console.log("updatedABetterWorkplace", updatedABetterWorkplace);
     console.log("idToUpdate", idToUpdate);
     console.log("listName", listName);
-    console.log("this.state.firstAid",this.state.firstAid);
+    console.log("this.state.firstAid", this.state.firstAid);
     axios
       .put(`http://localhost:8080/lists/${idToUpdate}`, updatedABetterWorkplace)
       .then((res) => {
@@ -252,6 +255,12 @@ class MainList extends Component {
         {/* <div className="youtube">
             <iframe width={playerWidth} height={playerHeight} src="https://www.youtube.com/embed/497RHaz_ajg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div> */}
+          
+        {this.state.loading ? null : (<Tally
+          aBetterWorkplace={this.state.aBetterWorkplace}
+          firstAid={this.state.firstAid}
+          fitness={this.state.fitness}
+        ></Tally>)}
       </div>
     );
   }
