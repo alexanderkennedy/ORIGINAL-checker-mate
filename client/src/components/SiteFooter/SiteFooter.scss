@@ -3,6 +3,7 @@
 @use "../../styles/partials/mixins.scss" as *;
 
 .footer {
+  background-image: url(../../assets/images/background/seedling.jpg);
   color: $ISSlate;
   font-size: 0.6875rem;
   text-align: center;
