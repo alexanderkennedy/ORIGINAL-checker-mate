@@ -25,7 +25,10 @@ table {
   background-color: rgb(158, 253, 155);
 }
 
-
+.tbody{
+  // background-color: crimson;
+  background-image: url(../../assets/animation/istockphoto-500558937-612x612.jpg);
+}
 
 th {
   border-bottom: 1px solid black;
@@ -33,9 +36,4 @@ th {
 
 td {
   text-align: center;
-}
-
-.slide-bck-left {
-	-webkit-animation: slide-bck-left 0.45s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-	        animation: slide-bck-left 0.45s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }

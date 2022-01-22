@@ -1,0 +1,19 @@
+
+@use "../../styles/partials/colours.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+.footer {
+  color: $ISSlate;
+  font-size: 0.6875rem;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  @include screen-greater-than(tablet) {
+    font-size: 0.75rem;
+    padding-top: 4rem;
+  }
+  @include screen-greater-than(desktop) {
+    padding-bottom: 3rem;
+    padding-top: 5.9375rem;
+  }
+}

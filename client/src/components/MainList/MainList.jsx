@@ -168,7 +168,7 @@ class MainList extends Component {
               <th>WATCHED</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="tbody">
             {this.state.aBetterWorkplace.map((val) => (
               <tr key={val.id}>
                 <td>{val.mediaType}</td>
