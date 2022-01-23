@@ -16,7 +16,7 @@ class MainList extends Component {
     aBetterWorkplace: [],
     firstAid: [],
     fitness: [],
-    loading:true,
+    loading: true,
   };
 
   componentDidMount() {
@@ -33,7 +33,7 @@ class MainList extends Component {
             aBetterWorkplace: res.data.workPlaceData,
             firstAid: res.data.firstAidData,
             fitness: res.data.fitnessData,
-            loading:false
+            loading: false,
           },
           () => console.log(this.state)
         );
@@ -60,7 +60,7 @@ class MainList extends Component {
       checked: aBetterWorkplace.lists.checked,
     });
   };
-  
+
   getFirstAid() {
     axios
       .get("http://localhost:8080/lists/first-aid")
@@ -102,7 +102,6 @@ class MainList extends Component {
       .then((res) => {
         this.getAllLists();
       });
-
   };
   render() {
     // console.log("this.state.aBetterWorkplace", this.state.aBetterWorkplace)
@@ -110,12 +109,18 @@ class MainList extends Component {
       <div className="full-list">
         <table>
           <thead className="header__workplace">
-            <tr>
-              <th>MEDIA TYPE</th>
-              <th>TIME IN MINUTES</th>
-              <th><img src="" alt="" /> BETTER WORKPLACE</th>
-              <th>PRIORITY</th>
-              <th>WATCHED</th>
+            <tr className="workplace-list__column-titles list__column-titles hidden">
+              <th className="workplace-list__column--name">MEDIA TYPE</th>
+              <th className="workplace-list__column--time">TIME IN MINUTES</th>
+              <th className="workplace-list__column--title">
+                <img
+                  src="../../assets/images/icons/shakingHands.jpg"
+                  alt="Image of shaking hands"
+                />{" "}
+                BETTER WORKPLACE
+              </th>
+              <th className="workplace-list__column--priority">PRIORITY</th>
+              <th className="workplace-list__column--watched">WATCHED</th>
             </tr>
           </thead>
           <tbody className="tbody">
@@ -130,7 +135,7 @@ class MainList extends Component {
                 </td>
                 <td>{val.priority}</td>
                 <td>
-                 <Checkbox
+                  <Checkbox
                     checked={val.watched}
                     onChange={(e) =>
                       this.handleCheckboxChange(e, val.id, val.listName)
@@ -139,9 +144,9 @@ class MainList extends Component {
                 </td>
               </tr>
             ))}
-            </tbody>
-            {/* BREAK */}
-            <tbody>
+          </tbody>
+          {/* BREAK */}
+          <tbody>
             <tr className="firstAid">
               <th>MEDIA TYPE</th>
               <th>TIME IN MINUTES</th>
@@ -170,16 +175,16 @@ class MainList extends Component {
                 </td>
               </tr>
             ))}
-            </tbody>
-            {/*  */}
-            <tr className="fitness">
-              <th>MEDIA TYPE</th>
-              <th>TIME IN MINUTES</th>
-              <th>FITNESS</th>
-              <th>PRIORITY</th>
-              <th>WATCHED</th>
-            </tr>
-            <tbody>
+          </tbody>
+          {/*  */}
+          <tr className="fitness">
+            <th>MEDIA TYPE</th>
+            <th>TIME IN MINUTES</th>
+            <th>FITNESS</th>
+            <th>PRIORITY</th>
+            <th>WATCHED</th>
+          </tr>
+          <tbody>
             {this.state.fitness.map((val, key) => (
               <tr key={key}>
                 <td>{val.mediaType}</td>
@@ -192,7 +197,8 @@ class MainList extends Component {
                 <td>{val.priority}</td>
                 <td>
                   {" "}
-                  <Checkbox className=".slide-bck-left"
+                  <Checkbox
+                    className=".slide-bck-left"
                     checked={val.watched}
                     onChange={(e) =>
                       this.handleCheckboxChange(e, val.id, val.listName)
@@ -207,12 +213,14 @@ class MainList extends Component {
         {/* <div className="youtube">
             <iframe width={playerWidth} height={playerHeight} src="https://www.youtube.com/embed/497RHaz_ajg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div> */}
-          
-        {this.state.loading ? null : (<Tally
-          aBetterWorkplace={this.state.aBetterWorkplace}
-          firstAid={this.state.firstAid}
-          fitness={this.state.fitness}
-        ></Tally>)}
+
+        {this.state.loading ? null : (
+          <Tally
+            aBetterWorkplace={this.state.aBetterWorkplace}
+            firstAid={this.state.firstAid}
+            fitness={this.state.fitness}
+          ></Tally>
+        )}
       </div>
     );
   }
