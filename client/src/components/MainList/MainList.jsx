@@ -113,7 +113,7 @@ class MainList extends Component {
             <tr>
               <th>MEDIA TYPE</th>
               <th>TIME IN MINUTES</th>
-              <th>TITLE</th>
+              <th><img src="" alt="" /> BETTER WORKPLACE</th>
               <th>PRIORITY</th>
               <th>WATCHED</th>
             </tr>
@@ -145,7 +145,7 @@ class MainList extends Component {
             <tr className="firstAid">
               <th>MEDIA TYPE</th>
               <th>TIME IN MINUTES</th>
-              <th>TITLE</th>
+              <th>FIRST AID</th>
               <th>PRIORITY</th>
               <th>WATCHED</th>
             </tr>
@@ -175,7 +175,7 @@ class MainList extends Component {
             <tr className="fitness">
               <th>MEDIA TYPE</th>
               <th>TIME IN MINUTES</th>
-              <th>TITLE</th>
+              <th>FITNESS</th>
               <th>PRIORITY</th>
               <th>WATCHED</th>
             </tr>
