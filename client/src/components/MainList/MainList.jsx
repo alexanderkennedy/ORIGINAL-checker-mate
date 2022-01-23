@@ -141,6 +141,7 @@ class MainList extends Component {
             ))}
             </tbody>
             {/* BREAK */}
+            <tbody>
             <tr className="firstAid">
               <th>MEDIA TYPE</th>
               <th>TIME IN MINUTES</th>
@@ -169,6 +170,7 @@ class MainList extends Component {
                 </td>
               </tr>
             ))}
+            </tbody>
             {/*  */}
             <tr className="fitness">
               <th>MEDIA TYPE</th>

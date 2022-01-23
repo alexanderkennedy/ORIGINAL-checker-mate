@@ -2,11 +2,13 @@ import "./App.css";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 // import PlantersDailyList from "./pages/PlantersDailyList/PlantersDailyList";
 // import PlantersMandatoryList from "./pages/PlantersMandatoryList/PlantersMandatoryList";
+import SiteHeader from "./components/SiteHeader/SiteHeader";
 import PlantersMainList from "./pages/PlantersMainList/PlantersMainList";
 import SiteFooter from "../src/components/SiteFooter/SiteFooter";
 function App() {
   return (
     <Router>
+      <SiteHeader />
       <Switch>
         <Route path="/" component={PlantersMainList} />
         {/* These routes are for future pages. */}
@@ -16,6 +18,7 @@ function App() {
         />
         <Route path="/planters-daily-list" component={PlantersDailyList} /> */}
       </Switch>
+
       <SiteFooter />
     </Router>
 
