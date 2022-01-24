@@ -6,7 +6,7 @@ import purplePlayIcon from "../../assets/images/icons/purplePlayIcon.svg";
 import "./MainList.scss";
 import { Link } from "react-router-dom";
 import Tally from "../../components/Tally/Tally";
-import shakingHands from "../../assets/images/icons/shakingHands.JPG"
+import shakingHands from "../../assets/images/icons/shakingHands.JPG";
 
 const playerHeight = "84.375";
 const playerWidth = "150";
@@ -141,14 +141,14 @@ class MainList extends Component {
             ))}
           </tbody>
           {/* BREAK */}
-            <tr className="full-list__column-titles--firstAid">
-              <th className="full-list__column--name">MEDIA TYPE</th>
-              <th className="full-list__column--time">TIME IN MINUTES</th>
-              <th className="full-list__column--title">🚑 FIRST AID</th>
-              <th className="full-list__column--priority">PRIORITY</th>
-              <th className="full-list__column--watched">WATCHED</th>
-            </tr>
-            <tbody className="full-list__body-wrap--first-aid">
+          <tr className="full-list__column-titles--firstAid">
+            <th className="full-list__column--name">MEDIA TYPE</th>
+            <th className="full-list__column--time">TIME IN MINUTES</th>
+            <th className="full-list__column--title">🚑 FIRST AID</th>
+            <th className="full-list__column--priority">PRIORITY</th>
+            <th className="full-list__column--watched">WATCHED</th>
+          </tr>
+          <tbody className="full-list__body-wrap--first-aid">
             {this.state.firstAid.map((val, key) => (
               <tr key={key}>
                 <td>{val.mediaType}</td>
@@ -193,7 +193,6 @@ class MainList extends Component {
                 <td>
                   {" "}
                   <Checkbox
-                    className=".slide-bck-left"
                     checked={val.watched}
                     onChange={(e) =>
                       this.handleCheckboxChange(e, val.id, val.listName)

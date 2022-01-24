@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { BsTree } from "react-icons/bs";
 import "./Checkbox.scss";
+import pepper from "../../assets/images/icons/pepper.png";
 
 class Checkbox extends Component {
   state = {
@@ -14,7 +16,7 @@ class Checkbox extends Component {
     return (
       <input
         onChange={this.handleChange}
-        className={`${this.state.isChecked ? "clicked" : "unclick"}`}
+        className={`checkbox ${this.state.isChecked ? "clicked" : "unclick"}`}
         type="checkbox"
         {...this.props}
       />
