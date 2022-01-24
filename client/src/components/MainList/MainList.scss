@@ -1,67 +1,47 @@
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
 
-
-.workplace-list__column-titles {
-  
-background-color: rgb(160, 234, 253);
-}
-// .workplace-list__column {
-//   &--name {
-//     width: 25%;
-//     @include screen-greater-than(desktop) {
-//       width: 27%;
-//     }
-//   }
-//   &--address {
-//     width: 20%;
-//   }
-//   &--contact {
-//     width: 20%;
-//   }
-//   &--info {
-//     width: 28%;
-//   }
-//   &--action {
-//   }
-// }
-
-
-
-.a-better-workplace-list {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
+.full-list {
+  display:flex;
+  flex-direction: column;
   align-items: center;
-}
+  width: 100vw;
 
-table {
-  border: 2px solid forestgreen;
-  border-top-right-radius: 4%;
-  width: 800px;
-  height: 200px;
-}
 
-.header {
-  // &__workplace{
-  // background-color: rgb(160, 234, 253);
-  // }
-}
-.firstAid{
-    background-color: rgb(247, 191, 191);
+  &__table {
+    width: 80vw;
+    border: 2px solid forestgreen;
+    border-top-right-radius: 4%;
+
   }
-.fitness{
-  background-color: rgb(158, 253, 155);
+  &__column-titles {
+    &--workplace {
+      background-color: rgb(160, 234, 253);
+    }
+    &--firstAid {
+      background-color: rgb(247, 191, 191);
+    }
+    &--fitness {
+      background-color: rgb(158, 253, 155);
+    }
+  }
+
+  &__body-wrap {
+    &--workplace {
+      background-image: url("../../assets/images/background/plantingcamp.jpg");
+    }
+    &--first-aid {
+      background-image: url("../../assets/images/background/firstAidSnip.JPG");
+    }
+    &--fitness {
+      background-image: url("../../assets/images/background/fitness.JPG");
+    }
+  }
 }
 
-.tbody{
-  // background-color: crimson;
-  // background-image: url(../../assets/animation/istockphoto-500558937-612x612.jpg);
-}
 
 th {
-  border-bottom: 1px solid black;
+  border-bottom: 3px solid black;
 }
 
 td {

@@ -1,0 +1,23 @@
+
+.warehouse-item {
+    &__name {
+      width: 55% !important;
+    }
+    &__time {
+      width: 45% !important;
+    }
+    &__title {
+      width: 45% !important;
+      @include screen-greater-than(desktop) {
+        width: 35%;
+        margin-left: 10%;
+      }
+    }
+    &__priority {
+      width: 55% !important;
+    }
+    &__watched {
+        width:5%;
+    }
+  }
+  

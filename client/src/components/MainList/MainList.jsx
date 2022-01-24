@@ -6,6 +6,7 @@ import purplePlayIcon from "../../assets/images/icons/purplePlayIcon.svg";
 import "./MainList.scss";
 import { Link } from "react-router-dom";
 import Tally from "../../components/Tally/Tally";
+import shakingHands from "../../assets/images/icons/shakingHands.JPG"
 
 const playerHeight = "84.375";
 const playerWidth = "150";
@@ -107,23 +108,17 @@ class MainList extends Component {
     // console.log("this.state.aBetterWorkplace", this.state.aBetterWorkplace)
     return (
       <div className="full-list">
-        <table>
-          <thead className="header__workplace">
-            <tr className="workplace-list__column-titles list__column-titles hidden">
-              <th className="workplace-list__column--name">MEDIA TYPE</th>
-              <th className="workplace-list__column--time">TIME IN MINUTES</th>
-              <th className="workplace-list__column--title">
-                <img
-                  src="../../assets/images/icons/shakingHands.jpg"
-                  alt="Image of shaking hands"
-                />{" "}
-                BETTER WORKPLACE
-              </th>
-              <th className="workplace-list__column--priority">PRIORITY</th>
-              <th className="workplace-list__column--watched">WATCHED</th>
+        <table className="full-list__table">
+          <thead className="full-list__header">
+            <tr className="full-list__column-titles--workplace list__column-titles hidden">
+              <th className="full-list__column--name">MEDIA TYPE</th>
+              <th className="full-list__column--time">TIME IN MINUTES</th>
+              <th className="full-list__column--title">A BETTER WORKPLACE</th>
+              <th className="full-list__column--priority">PRIORITY</th>
+              <th className="full-list__column--watched">WATCHED</th>
             </tr>
           </thead>
-          <tbody className="tbody">
+          <tbody className="full-list__body-wrap--workplace">
             {this.state.aBetterWorkplace.map((val) => (
               <tr key={val.id}>
                 <td>{val.mediaType}</td>
@@ -146,14 +141,14 @@ class MainList extends Component {
             ))}
           </tbody>
           {/* BREAK */}
-          <tbody>
-            <tr className="firstAid">
-              <th>MEDIA TYPE</th>
-              <th>TIME IN MINUTES</th>
-              <th>FIRST AID</th>
-              <th>PRIORITY</th>
-              <th>WATCHED</th>
+            <tr className="full-list__column-titles--firstAid">
+              <th className="full-list__column--name">MEDIA TYPE</th>
+              <th className="full-list__column--time">TIME IN MINUTES</th>
+              <th className="full-list__column--title">🚑 FIRST AID</th>
+              <th className="full-list__column--priority">PRIORITY</th>
+              <th className="full-list__column--watched">WATCHED</th>
             </tr>
+            <tbody className="full-list__body-wrap--first-aid">
             {this.state.firstAid.map((val, key) => (
               <tr key={key}>
                 <td>{val.mediaType}</td>
@@ -177,14 +172,14 @@ class MainList extends Component {
             ))}
           </tbody>
           {/*  */}
-          <tr className="fitness">
-            <th>MEDIA TYPE</th>
-            <th>TIME IN MINUTES</th>
-            <th>FITNESS</th>
-            <th>PRIORITY</th>
-            <th>WATCHED</th>
+          <tr className="full-list__column-titles--fitness">
+            <th className="full-list__column--name">MEDIA TYPE</th>
+            <th className="full-list__column--time">TIME IN MINUTES</th>
+            <th className="full-list__column--title">🏊 FITNESS</th>
+            <th className="full-list__column--priority">PRIORITY</th>
+            <th className="full-list__column--watched">WATCHED</th>
           </tr>
-          <tbody>
+          <tbody className="full-list__body-wrap--fitness">
             {this.state.fitness.map((val, key) => (
               <tr key={key}>
                 <td>{val.mediaType}</td>
