@@ -11,12 +11,23 @@
   &__table {
     width: 80vw;
     border: 2px solid forestgreen;
-    border-top-right-radius: 4%;
+    border-radius: 4%;
+    margin: 3%;
+    outline-offset: 2px solid forestgreen;;
+
+    outline: 3px dashed red;
+    outline-offset: 10px;
+    background: yellow;
+    border: 1px solid blue;
+    margin: 15px;
+
+
 
   }
   &__column-titles {
     &--workplace {
       background-color: rgb(160, 234, 253);
+      border-top-right-radius: 4%;
     }
     &--firstAid {
       background-color: rgb(247, 191, 191);
@@ -24,6 +35,9 @@
     &--fitness {
       background-color: rgb(158, 253, 155);
     }
+  }
+  &__column--watched {
+    border-top-right-radius: 4%;
   }
 
   &__body-wrap {

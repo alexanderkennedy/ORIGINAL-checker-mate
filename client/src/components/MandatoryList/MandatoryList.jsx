@@ -2,11 +2,8 @@
 import React, { useState } from 'react';
 import {Link} from "react-router-dom";
 
-import deleteIcon from "../../assets/images/icons/delete_outline-24px.svg";
-import editIcon from "../../assets/images/icons/edit-24px.svg";
+import "./MandatoryList.scss";
 
-import "./DisplayWarehouses.scss";
-import Modal from '../DeleteWarehouseModal/DeleteWarehouseModal';
 
 
 const DisplayWarehouseItem = ({warehouse}) => {

@@ -12,16 +12,8 @@ class Tally extends Component {
         this.props.fitness
       ),
     });
-    // this.tally()
-    // console.log(this.state.aBetterWorkplace)
   }
   componentDidUpdate(previousProps) {
-    // this.setState({
-    //     tally:this.tally()
-    // })
-    // console.log(previousprops);
-    // console.log(previousstate);
-    // console.log(this.state.aBetterWorkplace);
     console.log(
       this.tally(
         this.props.aBetterWorkplace,
@@ -45,37 +37,6 @@ class Tally extends Component {
       });
     }
   }
-
-  // Keep track of counter in state and when counter changes state refreshes.
-  // getAllLists() {
-  //     axios
-  //       .get("http://localhost:8080/lists/")
-  //       .then((res) => {
-  //           console.log(res)
-  //         this.setState(
-  //           {
-  //             aBetterWorkplace: res.data.workPlaceData,
-  //             firstAid: res.data.firstAidData,
-  //             fitness: res.data.fitnessData,
-  //           },
-  //         );
-  //         console.log("a better workplace", res.data)
-  //       })
-  //       .catch((err) => console.log(err));
-  //   };
-  // let data1 = [
-
-  // ];
-
-  // let data2 = [
-
-  // ];
-
-  // let data3 = [
-
-  // ];
-
-  // // console.log(data1, data2, data3);
 
   tally = (list1, list2, list3) => {
     let counter = 0;
@@ -101,9 +62,9 @@ class Tally extends Component {
   // console.log("Total tally: ", tally());
   render() {
     return (
-      <div>
-        <tr className="tally-wrap">
-          <th>{`TALLY (WATCHED out of TOTAL ITEMS):${this.state.tally}`}</th>
+      <div className="tally">
+        <tr className="tally__row">
+          <th className="tally__head">{`TALLY (WATCHED out of TOTAL ITEMS):${this.state.tally}`}</th>
         </tr>
       </div>
     );
@@ -111,7 +72,3 @@ class Tally extends Component {
 }
 
 export default Tally;
-
-//read all the jsons put together
-//count the amount of times "true" shows up
-//present that number
