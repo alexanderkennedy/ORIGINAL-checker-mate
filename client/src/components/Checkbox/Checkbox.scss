@@ -16,12 +16,13 @@
 }
 
 .checkbox {
-  border-color: chartreuse;
+  // border-color: chartreuse;
   padding: 20px;
   height: 20px;
-  border:5px solid red;
-  background-color:salmon;
+  border:5px solid rgb(134, 172, 63);
+  background-color:rgb(97, 218, 42);
   background-image: url(../../assets/images/icons/pepper.png);
+  
 }
 
 .clicked {
