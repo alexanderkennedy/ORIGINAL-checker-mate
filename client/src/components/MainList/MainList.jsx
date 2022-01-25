@@ -7,6 +7,7 @@ import "./MainList.scss";
 import { Link } from "react-router-dom";
 import Tally from "../../components/Tally/Tally";
 import shakingHands from "../../assets/images/icons/shakingHands.JPG";
+import {FaRegHandshake} from "react-icons/fa";
 
 const playerHeight = "84.375";
 const playerWidth = "150";
@@ -113,7 +114,7 @@ class MainList extends Component {
             <tr className="full-list__column-titles--workplace list__column-titles hidden">
               <th className="full-list__column--name">MEDIA TYPE</th>
               <th className="full-list__column--time">TIME IN MINUTES</th>
-              <th className="full-list__column--title">A BETTER WORKPLACE</th>
+              <th className="full-list__column--title"><FaRegHandshake size="1.5em" color="red" /> A BETTER WORKPLACE</th>
               <th className="full-list__column--priority">PRIORITY</th>
               <th className="full-list__column--watched">WATCHED</th>
             </tr>

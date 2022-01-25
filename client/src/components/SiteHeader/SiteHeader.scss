@@ -17,6 +17,12 @@
 .navbar {
   @include flex(space-between, center, row);
   padding: 0.5rem 0;
+  &__logo {
+    height: 1%;
+  }
+  &__navLink {
+    height: 2rem;
+  }
   &__link {
     text-decoration: none;
     color: inherit;

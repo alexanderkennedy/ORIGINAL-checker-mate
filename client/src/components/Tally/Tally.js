@@ -64,7 +64,7 @@ class Tally extends Component {
     return (
       <div className="tally">
         <tr className="tally__row">
-          <th className="tally__head">{`TALLY (WATCHED out of TOTAL ITEMS):${this.state.tally}`}</th>
+          <th className="tally__head">{`TALLY :${this.state.tally}`}/9</th>
         </tr>
       </div>
     );
