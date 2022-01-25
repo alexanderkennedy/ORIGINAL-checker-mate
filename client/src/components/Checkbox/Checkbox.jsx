@@ -20,7 +20,7 @@ class Checkbox extends Component {
       
       <input
         onChange={this.handleChange}
-        className={`checkbox ${this.state.isChecked ? "clicked" : "unclick"}`}
+        className={`checkbox ${this.state.isChecked ? "clicked active"  : "unclick"}`}
         type="checkbox"
         {...this.props}
       />
