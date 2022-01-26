@@ -2,27 +2,23 @@
 @use "../../styles/partials/mixins.scss" as *;
 
 .full-list {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
-
 
   &__table {
     width: 80vw;
     border: 2px solid forestgreen;
     border-radius: 4%;
     margin: 3%;
-    outline-offset: 2px solid forestgreen;;
+    outline-offset: 2px solid forestgreen;
 
     outline: 3px dashed red;
     outline-offset: 10px;
     background: yellow;
     border: 1px solid blue;
     margin: 15px;
-
-
-
   }
   &__column-titles {
     font-size: 30rem;
@@ -45,21 +41,32 @@
   &__body-wrap {
     &--workplace {
       background-image: url("../../assets/images/background/plantingcamp.jpg");
+      height:30rem;
     }
     &--first-aid {
+      // display: none;
       background-image: url("../../assets/images/background/firstAidSnip.JPG");
+      &--hidden {
+        display: none;
+      }
     }
     &--fitness {
+      // display: none;
       background-image: url("../../assets/images/background/fitness.JPG");
+      &--hidden {
+        display: none;
+      }
     }
   }
 }
-
-
 th {
   border-bottom: 3px solid black;
 }
 
 td {
   text-align: center;
+}
+.experiment {
+  display: flex;
+  flex-direction: row;
 }

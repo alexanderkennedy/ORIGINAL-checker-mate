@@ -7,7 +7,7 @@ import "./MainList.scss";
 import { Link } from "react-router-dom";
 import Tally from "../../components/Tally/Tally";
 import shakingHands from "../../assets/images/icons/shakingHands.JPG";
-import {FaRegHandshake} from "react-icons/fa";
+import { FaRegHandshake } from "react-icons/fa";
 
 const playerHeight = "84.375";
 const playerWidth = "150";
@@ -105,16 +105,47 @@ class MainList extends Component {
         this.getAllLists();
       });
   };
+
+  mandatoryTally = (list1) => {
+    let mandatoryCounter = 0;
+    list1.forEach((element) => {
+      //   console.log("element", element);
+      if (element.watched === true) {
+        mandatoryCounter++;
+      }
+    });
+    return mandatoryCounter;
+  };
+
   render() {
-    // console.log("this.state.aBetterWorkplace", this.state.aBetterWorkplace)
+    console.log(
+      "this.mandatoryTally",
+      this.mandatoryTally(this.state.aBetterWorkplace)
+    );
+
     return (
       <div className="full-list">
+        {this.state.loading ? null : (
+          <Tally
+            className="experiment"
+            aBetterWorkplace={this.state.aBetterWorkplace}
+            firstAid={this.state.firstAid}
+            fitness={this.state.fitness}
+            mandatoryTallyFunction={this.mandatoryTally}
+          ></Tally>
+          // I need information from tally
+          // I need to create information in child whi
+          // A function that has a true or false in tally
+          // The
+        )}
         <table className="full-list__table">
           <thead className="full-list__header">
             <tr className="full-list__column-titles--workplace list__column-titles hidden">
               <th className="full-list__column--name">MEDIA TYPE</th>
               <th className="full-list__column--time">TIME IN MINUTES</th>
-              <th className="full-list__column--title"><FaRegHandshake size="1.5em" color="red" /> A BETTER WORKPLACE</th>
+              <th className="full-list__column--title">
+                <FaRegHandshake size="1.5em" color="red" /> A BETTER WORKPLACE
+              </th>
               <th className="full-list__column--priority">PRIORITY</th>
               <th className="full-list__column--watched">WATCHED</th>
             </tr>
@@ -142,14 +173,15 @@ class MainList extends Component {
             ))}
           </tbody>
           {/* BREAK */}
-          <tr className="full-list__column-titles--firstAid">
-            <th className="full-list__column--name">MEDIA TYPE</th>
-            <th className="full-list__column--time">TIME IN MINUTES</th>
-            <th className="full-list__column--title">🚑 FIRST AID</th>
-            <th className="full-list__column--priority">PRIORITY</th>
-            <th className="full-list__column--watched">WATCHED</th>
-          </tr>
-          <tbody className="full-list__body-wrap--first-aid">
+          <tbody className={this.mandatoryTally(this.state.aBetterWorkplace)>=3 ? "full-list__body-wrap--first-aid" : "full-list__body-wrap--first-aid full-list__body-wrap--first-aid--hidden"}>
+            <tr className="full-list__column-titles--firstAid">
+              <th className="full-list__column--name">MEDIA TYPE</th>
+              <th className="full-list__column--time">TIME IN MINUTES</th>
+              <th className="full-list__column--title">🚑 FIRST AID</th>
+              <th className="full-list__column--priority">PRIORITY</th>
+              <th className="full-list__column--watched">WATCHED</th>
+            </tr>
+            {/* <tbody className="full-list__body-wrap--first-aid"> */}
             {this.state.firstAid.map((val, key) => (
               <tr key={key}>
                 <td>{val.mediaType}</td>
@@ -173,14 +205,16 @@ class MainList extends Component {
             ))}
           </tbody>
           {/*  */}
-          <tr className="full-list__column-titles--fitness">
-            <th className="full-list__column--name">MEDIA TYPE</th>
-            <th className="full-list__column--time">TIME IN MINUTES</th>
-            <th className="full-list__column--title">🏊 FITNESS</th>
-            <th className="full-list__column--priority">PRIORITY</th>
-            <th className="full-list__column--watched">WATCHED</th>
-          </tr>
-          <tbody className="full-list__body-wrap--fitness">
+          <tbody className={this.mandatoryTally(this.state.aBetterWorkplace)>=3 ? "full-list__body-wrap--fitness" : "full-list__body-wrap--fitness full-list__body-wrap--fitness--hidden"}>
+          {/* <tbody className="full-list__body-wrap--fitness"> */}
+            <tr className="full-list__column-titles--fitness">
+              <th className="full-list__column--name">MEDIA TYPE</th>
+              <th className="full-list__column--time">TIME IN MINUTES</th>
+              <th className="full-list__column--title">🏊 FITNESS</th>
+              <th className="full-list__column--priority">PRIORITY</th>
+              <th className="full-list__column--watched">WATCHED</th>
+            </tr>
+            {/* <tbody className="full-list__body-wrap--fitness"> */}
             {this.state.fitness.map((val, key) => (
               <tr key={key}>
                 <td>{val.mediaType}</td>
@@ -204,17 +238,15 @@ class MainList extends Component {
             ))}
           </tbody>
         </table>
-
         {/* <div className="youtube">
             <iframe width={playerWidth} height={playerHeight} src="https://www.youtube.com/embed/497RHaz_ajg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div> */}
-
-        {this.state.loading ? null : (
+        {/* {this.state.loading ? null : (
           <Tally
             aBetterWorkplace={this.state.aBetterWorkplace}
             firstAid={this.state.firstAid}
             fitness={this.state.fitness}
-          ></Tally>
+          ></Tally> */}
         )}
       </div>
     );

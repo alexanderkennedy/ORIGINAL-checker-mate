@@ -13,7 +13,7 @@
 .checkbox:checked {
   background-color: rgb(214, 255, 173);
   border: 5px solid rgb(24, 32, 9);
-  background-image: url(../../assets/images/icons/Shovel.png);
+  background-image: url(../../assets/animation/tree.gif);
 }
 .checkbox {
   // border-color: chartreuse;
@@ -31,6 +31,7 @@
   &:active {
     transform: scale(2) rotate(360deg);
     transition: width 2s, height 2s, transform 0.5s;
+    // animation: rotate-scale-up 0.65s linear both;
   }
 }
 .clicked {

@@ -1,5 +1,21 @@
 .tally{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-top: 2%;
     color: crimson;
     font-size: 2REM;
+
+    &__popup{
+    }
+
+    &__image{
+        height:10rem;
+    }
+}
+
+.tally__row {
+    display: flex;
+    justify-content: center;
 }
