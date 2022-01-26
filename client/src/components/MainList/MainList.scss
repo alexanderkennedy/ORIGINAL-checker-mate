@@ -19,6 +19,7 @@
     background: rgb(161, 191, 245);
     border: 1px solid blue;
     margin: 15px;
+    overflow: hidden;
   }
   &__column-titles {
     font-size: 30rem;
@@ -62,6 +63,7 @@
 
   &__body-wrap {
     &--workplace {
+      background-color:rgb(165, 165, 229);
       background-image: url("../../assets/images/background/plantingcamp.jpg");
       &--hidden {
         height: 30rem;
@@ -88,8 +90,17 @@ th {
   border-bottom: 3px solid black;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
 td {
   text-align: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  
 }
 .experiment {
   display: flex;
