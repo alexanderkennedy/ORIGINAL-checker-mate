@@ -132,6 +132,7 @@ class MainList extends Component {
             firstAid={this.state.firstAid}
             fitness={this.state.fitness}
             mandatoryTallyFunction={this.mandatoryTally}
+            location="top"
           ></Tally>
         )}
         <table className="full-list__table">
@@ -147,20 +148,30 @@ class MainList extends Component {
             </tr>
           </thead>
           {/* <tbody className="full-list__body-wrap--workplace"> */}
-            <tbody className={this.mandatoryTally(this.state.aBetterWorkplace)>=3 ? "full-list__body-wrap--workplace" : "full-list__body-wrap--workplace full-list__body-wrap--workplace--hidden"}>
-          {/* <tbody className={this.mandatoryTally(this.state.aBetterWorkplace)>=3 ? "full-list__body-wrap--first-aid" : "full-list__body-wrap--first-aid full-list__body-wrap--first-aid--hidden"}> */}
+          <tbody
+            className={
+              this.mandatoryTally(this.state.aBetterWorkplace) >= 3
+                ? "full-list__body-wrap--workplace"
+                : "full-list__body-wrap--workplace full-list__body-wrap--workplace--hidden"
+            }
+          >
+            {/* <tbody className={this.mandatoryTally(this.state.aBetterWorkplace)>=3 ? "full-list__body-wrap--first-aid" : "full-list__body-wrap--first-aid full-list__body-wrap--first-aid--hidden"}> */}
             {this.state.aBetterWorkplace.map((val) => (
               <tr className="full-list__row" key={val.id}>
-                 {/* <tr className={this.mandatoryTally(this.state.aBetterWorkplace)>=3 ? "full-list__row" key={val.id} : "full-list__row full-list__row--hidden" key={val.id}}> */}
-               {/* <tbody className={this.mandatoryTally(this.state.aBetterWorkplace)>=3 ? "full-list__body-wrap--first-aid" : "full-list__body-wrap--first-aid full-list__body-wrap--first-aid--hidden"}></tbody>  */}
-                <td className="full-list__row--item--mediaType">{val.mediaType}</td>
+                {/* <tr className={this.mandatoryTally(this.state.aBetterWorkplace)>=3 ? "full-list__row" key={val.id} : "full-list__row full-list__row--hidden" key={val.id}}> */}
+                {/* <tbody className={this.mandatoryTally(this.state.aBetterWorkplace)>=3 ? "full-list__body-wrap--first-aid" : "full-list__body-wrap--first-aid full-list__body-wrap--first-aid--hidden"}></tbody>  */}
+                <td className="full-list__row--item--mediaType">
+                  {val.mediaType}
+                </td>
                 <td className="full-list__row--item--time">{val.min}</td>
                 <td className="full-list__row--item--title">
-                  <a  href={val.url} target="_blank">
+                  <a href={val.url} target="_blank">
                     {val.title}
                   </a>
-                </td >
-                <td className="full-list__row--item--priority">{val.priority}</td>
+                </td>
+                <td className="full-list__row--item--priority">
+                  {val.priority}
+                </td>
                 <td>
                   <Checkbox
                     checked={val.watched}
@@ -173,7 +184,13 @@ class MainList extends Component {
             ))}
           </tbody>
           {/* BREAK */}
-          <tbody className={this.mandatoryTally(this.state.aBetterWorkplace)>=3 ? "full-list__body-wrap--first-aid" : "full-list__body-wrap--first-aid full-list__body-wrap--first-aid--hidden"}>
+          <tbody
+            className={
+              this.mandatoryTally(this.state.aBetterWorkplace) >= 3
+                ? "full-list__body-wrap--first-aid"
+                : "full-list__body-wrap--first-aid full-list__body-wrap--first-aid--hidden"
+            }
+          >
             <tr className="full-list__column-titles--firstAid">
               <th className="full-list__column--name">MEDIA TYPE</th>
               <th className="full-list__column--time">TIME IN MINUTES</th>
@@ -205,8 +222,14 @@ class MainList extends Component {
             ))}
           </tbody>
           {/*  */}
-          <tbody className={this.mandatoryTally(this.state.aBetterWorkplace)>=3 ? "full-list__body-wrap--fitness" : "full-list__body-wrap--fitness full-list__body-wrap--fitness--hidden"}>
-          {/* <tbody className="full-list__body-wrap--fitness"> */}
+          <tbody
+            className={
+              this.mandatoryTally(this.state.aBetterWorkplace) >= 3
+                ? "full-list__body-wrap--fitness"
+                : "full-list__body-wrap--fitness full-list__body-wrap--fitness--hidden"
+            }
+          >
+            {/* <tbody className="full-list__body-wrap--fitness"> */}
             <tr className="full-list__column-titles--fitness">
               <th className="full-list__column--name">MEDIA TYPE</th>
               <th className="full-list__column--time">TIME IN MINUTES</th>
@@ -247,7 +270,16 @@ class MainList extends Component {
             firstAid={this.state.firstAid}
             fitness={this.state.fitness}
           ></Tally> */}
-        
+        {this.state.loading ? null : (
+          <Tally
+            className="experiment"
+            aBetterWorkplace={this.state.aBetterWorkplace}
+            firstAid={this.state.firstAid}
+            fitness={this.state.fitness}
+            mandatoryTallyFunction={this.mandatoryTally}
+            location="bottom"
+          ></Tally>
+        )}
       </div>
     );
   }

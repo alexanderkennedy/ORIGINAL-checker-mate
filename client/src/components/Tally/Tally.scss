@@ -8,10 +8,15 @@
     font-size: 2REM;
 
     &__popup{
+        display:flex;
+        justify-content: center;
     }
 
     &__image{
-        height:10rem;
+        height:20rem;
+    }
+    &__head {
+        font-weight: bold;
     }
 }
 

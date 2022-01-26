@@ -3,7 +3,7 @@
 @use "../../styles/partials/mixins.scss" as *;
 
 .page-header {
-  background-image: url(../../assets/images/background/header-background.jpg);
+  background-image: url(../../assets/images/background/forest.PNG);
   background-color: $ISlightlightGreen;
   @include flex(center, center, column);
   color: $ISCloud;

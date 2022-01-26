@@ -3,14 +3,16 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 // import PlantersDailyList from "./pages/PlantersDailyList/PlantersDailyList";
 // import PlantersMandatoryList from "./pages/PlantersMandatoryList/PlantersMandatoryList";
 import SiteHeader from "./components/SiteHeader/SiteHeader";
-import PlantersMainList from "./pages/PlantersMainList/PlantersMainList";
+import MainList from "./pages/PlantersMainList/PlantersMainList";
+import Login from "./pages/Login/Login";
 import SiteFooter from "../src/components/SiteFooter/SiteFooter";
 function App() {
   return (
     <Router>
       <SiteHeader />
       <Switch>
-        <Route path="/" component={PlantersMainList} />
+        <Route path="/Login"  component={Login} />
+        <Route path="/MainList"  component={MainList} />
         {/* These routes are for future pages. */}
         {/* <Route
           path="/planters-mandatory-list"

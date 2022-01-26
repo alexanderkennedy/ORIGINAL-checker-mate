@@ -8,9 +8,8 @@
   width: 100vw;
 
   &__header {
-    height:4rem;
+    height: 4rem;
     font-size: 1.5rem;
-
   }
 
   &__table {
@@ -41,34 +40,32 @@
     }
   }
   &__column--watched {
-  width: 15%;
+    width: 15%;
   }
-  
+
   &__row {
-    &--hidden{
+    &--hidden {
+      &--item {}
+        &--mediaType {
+          font-size: 4rem;
+        }
+        &--time {
+          font-size: 3rem;
+        }
 
-  &--item {
-    &--mediaType{
-      font-size: 4rem;
-    }
-    &--time{
-      font-size: 3rem;
-    }
-
-    &--title{
-      font-size: 2rem;
-    }
-    &--priority{
-      font-size: 3rem;
+        &--title {
+          font-size: 2rem;
+        }
+        &--priority {
+          font-size: 3rem;
+        }
+      
     }
   }
-}
-  }
-
 
   &__body-wrap {
     &--workplace {
-      background-color:rgb(165, 165, 229);
+      background-color: rgb(165, 165, 229);
       background-image: url("../../assets/images/background/plantingcamp.jpg");
       &--hidden {
         height: 30rem;
@@ -99,13 +96,18 @@ a {
   text-decoration: none;
   color: black;
   font-weight: bold;
+  background-color: rgba(162, 194, 207, 0.438);
+  &:hover {
+    font-size:1.8rem;
+    text-decoration: underline;
+    background-color: rgb(220, 185, 243);
+  }
 }
 
 td {
   text-align: center;
   text-decoration: none;
   font-size: 1.5rem;
-  
 }
 .experiment {
   display: flex;

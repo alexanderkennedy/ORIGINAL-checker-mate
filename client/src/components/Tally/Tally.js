@@ -11,6 +11,7 @@ import no5 from "../../assets/animation/no5.png";
 import no6 from "../../assets/animation/no6.png";
 import no7 from "../../assets/animation/no7.png";
 import no8 from "../../assets/animation/no8.png";
+import tree from "../../assets/animation/tree.gif";
 
 
 
@@ -93,15 +94,20 @@ class Tally extends Component {
   // console.log("Total tally: ", tally());
   render() {
     console.log(this.props);
-    return (
+    if(this.props.location==="bottom") return (
       <div className="tally">
         <div className="tally__row">
           <p className="tally__head">
-            {`TALLY :${this.state.tally}`}/9,
-            {` Mandatory Tally:${this.state.mandatoryTally}`}/3
+            {`TALLY :${this.state.tally}`}/9
+            {/* {` Mandatory Tally:${this.state.mandatoryTally}`}/3 */}
           </p>
         </div>
+        </div>
+)
+if(this.props.location==="top") return (
 
+
+<div className="tally">
         {this.state.tally === 0 ? (
           <div className="tally__popup">
             <img
@@ -116,11 +122,11 @@ class Tally extends Component {
 
 {this.state.tally === 1 ? (
           <div className="tally__popup">
-            <img
+            {/* <img
               className="tally__image"
               src={no1}
               alt="descriptive text"
-            ></img>
+            ></img> */}
           </div>
         ) : (
           ""
@@ -128,11 +134,11 @@ class Tally extends Component {
 
 {this.state.tally === 2 ? (
           <div className="tally__popup">
-            <img
+            {/* <img
               className="tally__image"
               src={no2}
               alt="descriptive text"
-            ></img>
+            ></img> */}
           </div>
         ) : (
           ""
@@ -180,7 +186,7 @@ class Tally extends Component {
           <div className="tally__popup">
             <img
               className="tally__image"
-              src={no6}
+              src={tree}
               alt="descriptive text"
             ></img>
           </div>
