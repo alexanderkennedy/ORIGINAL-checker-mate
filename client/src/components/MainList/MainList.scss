@@ -8,15 +8,15 @@
   width: 100vw;
 
   &__table {
-    width: 80vw;
+    width: 90vw;
     border: 2px solid forestgreen;
     border-radius: 4%;
     margin: 3%;
     outline-offset: 2px solid forestgreen;
 
-    outline: 3px dashed red;
+    outline: 3px dashed rgb(35, 58, 42);
     outline-offset: 10px;
-    background: yellow;
+    background: rgb(161, 191, 245);
     border: 1px solid blue;
     margin: 15px;
   }
@@ -35,10 +35,12 @@
     }
   }
   &__column--watched {
-    border-top-right-radius: 4%;
+    border-top-right-radius: 6%;
   }
   
   &__row {
+    &--hidden{
+
   &--item {
     &--mediaType{
       font-size: 4rem;
@@ -54,13 +56,17 @@
       font-size: 3rem;
     }
   }
+}
   }
 
 
   &__body-wrap {
     &--workplace {
       background-image: url("../../assets/images/background/plantingcamp.jpg");
-      height:30rem;
+      &--hidden {
+        height: 30rem;
+      }
+      // height:30rem;
     }
     &--first-aid {
       // display: none;

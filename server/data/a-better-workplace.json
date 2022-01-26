@@ -7,7 +7,7 @@
     "url": "https://www.treesprintplanting.com/expectations.html",
     "title": "How to get along. Policy",
     "priority": "4",
-    "watched": false
+    "watched": true
   },
   {
     "listName": "a-better-workplace",
@@ -17,7 +17,7 @@
     "url": "https://www.worksafebc.com/en/health-safety/hazards-exposures/bullying-harassment",
     "title": "Explanation of Legal definition of Bullying and Harassment",
     "priority": "5",
-    "watched": false
+    "watched": true
   },
   {
     "listName": "a-better-workplace",
@@ -27,6 +27,6 @@
     "url": "https://www.youtube.com/embed/497RHaz_ajg",
     "title": "Video account of bullying from WorkSafe BC",
     "priority": "4",
-    "watched": false
+    "watched": true
   }
 ]

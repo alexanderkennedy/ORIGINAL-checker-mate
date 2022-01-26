@@ -133,10 +133,6 @@ class MainList extends Component {
             fitness={this.state.fitness}
             mandatoryTallyFunction={this.mandatoryTally}
           ></Tally>
-          // I need information from tally
-          // I need to create information in child whi
-          // A function that has a true or false in tally
-          // The
         )}
         <table className="full-list__table">
           <thead className="full-list__header">
@@ -147,13 +143,16 @@ class MainList extends Component {
                 <FaRegHandshake size="1.5em" color="red" /> A BETTER WORKPLACE
               </th>
               <th className="full-list__column--priority">PRIORITY</th>
-              <th className="full-list__column--watched">WATCHED</th>
+              <th className="full-list__column--watched">WATCHED ?</th>
             </tr>
           </thead>
-          <tbody className="full-list__body-wrap--workplace">
+          {/* <tbody className="full-list__body-wrap--workplace"> */}
+            <tbody className={this.mandatoryTally(this.state.aBetterWorkplace)>=3 ? "full-list__body-wrap--workplace" : "full-list__body-wrap--workplace full-list__body-wrap--workplace--hidden"}>
+          {/* <tbody className={this.mandatoryTally(this.state.aBetterWorkplace)>=3 ? "full-list__body-wrap--first-aid" : "full-list__body-wrap--first-aid full-list__body-wrap--first-aid--hidden"}> */}
             {this.state.aBetterWorkplace.map((val) => (
               <tr className="full-list__row" key={val.id}>
-               
+                 {/* <tr className={this.mandatoryTally(this.state.aBetterWorkplace)>=3 ? "full-list__row" key={val.id} : "full-list__row full-list__row--hidden" key={val.id}}> */}
+               {/* <tbody className={this.mandatoryTally(this.state.aBetterWorkplace)>=3 ? "full-list__body-wrap--first-aid" : "full-list__body-wrap--first-aid full-list__body-wrap--first-aid--hidden"}></tbody>  */}
                 <td className="full-list__row--item--mediaType">{val.mediaType}</td>
                 <td className="full-list__row--item--time">{val.min}</td>
                 <td className="full-list__row--item--title">
@@ -180,7 +179,7 @@ class MainList extends Component {
               <th className="full-list__column--time">TIME IN MINUTES</th>
               <th className="full-list__column--title">🚑 FIRST AID</th>
               <th className="full-list__column--priority">PRIORITY</th>
-              <th className="full-list__column--watched">WATCHED</th>
+              <th className="full-list__column--watched">WATCHED ?</th>
             </tr>
             {/* <tbody className="full-list__body-wrap--first-aid"> */}
             {this.state.firstAid.map((val, key) => (
@@ -213,7 +212,7 @@ class MainList extends Component {
               <th className="full-list__column--time">TIME IN MINUTES</th>
               <th className="full-list__column--title">🏊 FITNESS</th>
               <th className="full-list__column--priority">PRIORITY</th>
-              <th className="full-list__column--watched">WATCHED</th>
+              <th className="full-list__column--watched">WATCHED ?</th>
             </tr>
             {/* <tbody className="full-list__body-wrap--fitness"> */}
             {this.state.fitness.map((val, key) => (
@@ -248,7 +247,7 @@ class MainList extends Component {
             firstAid={this.state.firstAid}
             fitness={this.state.fitness}
           ></Tally> */}
-        )}
+        
       </div>
     );
   }
