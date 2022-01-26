@@ -152,15 +152,16 @@ class MainList extends Component {
           </thead>
           <tbody className="full-list__body-wrap--workplace">
             {this.state.aBetterWorkplace.map((val) => (
-              <tr key={val.id}>
-                <td>{val.mediaType}</td>
-                <td>{val.min}</td>
-                <td>
-                  <a href={val.url} target="_blank">
+              <tr className="full-list__row" key={val.id}>
+               
+                <td className="full-list__row--item--mediaType">{val.mediaType}</td>
+                <td className="full-list__row--item--time">{val.min}</td>
+                <td className="full-list__row--item--title">
+                  <a  href={val.url} target="_blank">
                     {val.title}
                   </a>
-                </td>
-                <td>{val.priority}</td>
+                </td >
+                <td className="full-list__row--item--priority">{val.priority}</td>
                 <td>
                   <Checkbox
                     checked={val.watched}

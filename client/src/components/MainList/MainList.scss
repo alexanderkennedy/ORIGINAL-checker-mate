@@ -37,6 +37,25 @@
   &__column--watched {
     border-top-right-radius: 4%;
   }
+  
+  &__row {
+  &--item {
+    &--mediaType{
+      font-size: 4rem;
+    }
+    &--time{
+      font-size: 3rem;
+    }
+
+    &--title{
+      font-size: 2rem;
+    }
+    &--priority{
+      font-size: 3rem;
+    }
+  }
+  }
+
 
   &__body-wrap {
     &--workplace {
