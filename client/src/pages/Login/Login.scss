@@ -1,0 +1,16 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+.Login {
+    &__wrap{display: flex;
+    flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+    }
+    &__name{
+        margin-bottom: .5rem;
+    }
+    &__password{
+        margin-bottom: .5rem;
+    }
+}
