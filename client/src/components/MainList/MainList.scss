@@ -7,6 +7,12 @@
   align-items: center;
   width: 100vw;
 
+  &__header {
+    height:4rem;
+    font-size: 1.5rem;
+
+  }
+
   &__table {
     width: 90vw;
     border: 2px solid forestgreen;
@@ -26,7 +32,6 @@
     color: aqua;
     &--workplace {
       background-color: rgb(160, 234, 253);
-      border-top-right-radius: 4%;
     }
     &--firstAid {
       background-color: rgb(247, 191, 191);
@@ -36,7 +41,7 @@
     }
   }
   &__column--watched {
-    border-top-right-radius: 6%;
+  width: 15%;
   }
   
   &__row {
