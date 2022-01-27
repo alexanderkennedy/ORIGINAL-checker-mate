@@ -1,20 +1,15 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
 import axios from "axios";
 import Checkbox from "../Checkbox/Checkbox";
-import purplePlayIcon from "../../assets/images/icons/purplePlayIcon.svg";
 import "./MainList.scss";
-import { Link } from "react-router-dom";
 import Tally from "../../components/Tally/Tally";
-import shakingHands from "../../assets/images/icons/shakingHands.JPG";
 import { FaRegHandshake } from "react-icons/fa";
 
-const playerHeight = "84.375";
-const playerWidth = "150";
+// const playerHeight = "84.375";
+// const playerWidth = "150";
 
 class MainList extends Component {
   state = {
-    // whatever you put in state, put in the actual inputs as well. (So names are matched)
     aBetterWorkplace: [],
     firstAid: [],
     fitness: [],
@@ -51,13 +46,11 @@ class MainList extends Component {
         this.setState({
           aBetterWorkplace: res.data,
         });
-        // console.log("a better workplace", res.data)
       })
       .catch((err) => console.log(err));
   }
   handleCheckboxChangeBetterWorkplace = (event) => {
     this.setState({ checked: event.target.checked });
-    // {console.log("checked: event.target.checked",checked: event.target.checked)}
     const aBetterWorkplace = this.setState({
       checked: aBetterWorkplace.lists.checked,
     });
@@ -70,7 +63,6 @@ class MainList extends Component {
         this.setState({
           firstAid: res.data,
         });
-        // console.log("first aid", res.data)
       })
       .catch((err) => console.log(err));
   }
@@ -82,7 +74,6 @@ class MainList extends Component {
         this.setState({
           fitness: res.data,
         });
-        // console.log("fitness", res.data)
       })
       .catch((err) => console.log(err));
   }
@@ -109,7 +100,6 @@ class MainList extends Component {
   mandatoryTally = (list1) => {
     let mandatoryCounter = 0;
     list1.forEach((element) => {
-      //   console.log("element", element);
       if (element.watched === true) {
         mandatoryCounter++;
       }
@@ -147,7 +137,6 @@ class MainList extends Component {
               <th className="full-list__column--watched">WATCHED ?</th>
             </tr>
           </thead>
-          {/* <tbody className="full-list__body-wrap--workplace"> */}
           <tbody
             className={
               this.mandatoryTally(this.state.aBetterWorkplace) >= 3
@@ -155,11 +144,8 @@ class MainList extends Component {
                 : "full-list__body-wrap--workplace full-list__body-wrap--workplace--hidden"
             }
           >
-            {/* <tbody className={this.mandatoryTally(this.state.aBetterWorkplace)>=3 ? "full-list__body-wrap--first-aid" : "full-list__body-wrap--first-aid full-list__body-wrap--first-aid--hidden"}> */}
             {this.state.aBetterWorkplace.map((val) => (
               <tr className="full-list__row" key={val.id}>
-                {/* <tr className={this.mandatoryTally(this.state.aBetterWorkplace)>=3 ? "full-list__row" key={val.id} : "full-list__row full-list__row--hidden" key={val.id}}> */}
-                {/* <tbody className={this.mandatoryTally(this.state.aBetterWorkplace)>=3 ? "full-list__body-wrap--first-aid" : "full-list__body-wrap--first-aid full-list__body-wrap--first-aid--hidden"}></tbody>  */}
                 <td className="full-list__row--item--mediaType">
                   {val.mediaType}
                 </td>
@@ -198,7 +184,6 @@ class MainList extends Component {
               <th className="full-list__column--priority">PRIORITY</th>
               <th className="full-list__column--watched">WATCHED ?</th>
             </tr>
-            {/* <tbody className="full-list__body-wrap--first-aid"> */}
             {this.state.firstAid.map((val, key) => (
               <tr key={key}>
                 <td>{val.mediaType}</td>
@@ -229,7 +214,6 @@ class MainList extends Component {
                 : "full-list__body-wrap--fitness full-list__body-wrap--fitness--hidden"
             }
           >
-            {/* <tbody className="full-list__body-wrap--fitness"> */}
             <tr className="full-list__column-titles--fitness">
               <th className="full-list__column--name">MEDIA TYPE</th>
               <th className="full-list__column--time">TIME IN MINUTES</th>
@@ -237,7 +221,6 @@ class MainList extends Component {
               <th className="full-list__column--priority">PRIORITY</th>
               <th className="full-list__column--watched">WATCHED ?</th>
             </tr>
-            {/* <tbody className="full-list__body-wrap--fitness"> */}
             {this.state.fitness.map((val, key) => (
               <tr key={key}>
                 <td>{val.mediaType}</td>
@@ -264,12 +247,6 @@ class MainList extends Component {
         {/* <div className="youtube">
             <iframe width={playerWidth} height={playerHeight} src="https://www.youtube.com/embed/497RHaz_ajg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div> */}
-        {/* {this.state.loading ? null : (
-          <Tally
-            aBetterWorkplace={this.state.aBetterWorkplace}
-            firstAid={this.state.firstAid}
-            fitness={this.state.fitness}
-          ></Tally> */}
         {this.state.loading ? null : (
           <Tally
             className="experiment"

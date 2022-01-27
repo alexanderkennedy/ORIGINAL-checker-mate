@@ -21,7 +21,6 @@
 
     outline: 3px dashed rgb(35, 58, 42);
     outline-offset: 10px;
-    // background: rgb(161, 191, 245);
     border: 1px solid blue;
     margin: 15px;
     overflow: hidden;
@@ -65,7 +64,6 @@
 
   &__body-wrap {
     &--workplace {
-      // background-color: rgb(165, 165, 229);
       background-image: linear-gradient(rgba(255, 255, 255, 0.527), rgba(255, 255, 255, 0.5)),
     url("../../assets/images/background/helicopter.jpg");
     background-repeat: no-repeat;
@@ -75,17 +73,14 @@
         height: 30rem;
         background-position: center;
       }
-      // height:30rem;
     }
     &--first-aid {
-      // display: none;
       background-image: url("../../assets/images/background/firstAidSnip.JPG");
       &--hidden {
         display: none;
       }
     }
     &--fitness {
-      // display: none;
       background-image: url("../../assets/images/background/fitness.JPG");
       &--hidden {
         display: none;
