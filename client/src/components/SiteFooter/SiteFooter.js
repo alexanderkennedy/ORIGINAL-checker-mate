@@ -1,6 +1,3 @@
-/** Site Footer component */
-// called from app.js
-
 import React from "react";
 import "./SiteFooter.scss";
 

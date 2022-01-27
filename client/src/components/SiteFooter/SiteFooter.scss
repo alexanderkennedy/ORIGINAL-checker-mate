@@ -3,18 +3,17 @@
 @use "../../styles/partials/mixins.scss" as *;
 
 .footer {
-  // background-image: url(../../assets/images/background/seedling.jpg);
   color: $ISSlate;
   font-size: 0.6875rem;
   text-align: center;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: .5rem;
+  padding-bottom: 1rem;
   @include screen-greater-than(tablet) {
     font-size: 0.75rem;
-    padding-top: 4rem;
+    padding-top: 0.5rem;
   }
   @include screen-greater-than(desktop) {
     padding-bottom: 3rem;
-    padding-top: 5.9375rem;
+    padding-top: 1rem;
   }
 }
