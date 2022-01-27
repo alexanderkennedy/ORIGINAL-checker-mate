@@ -66,13 +66,14 @@
   &__body-wrap {
     &--workplace {
       // background-color: rgb(165, 165, 229);
-      background-image: linear-gradient(rgba(50, 50, 50, 0.527), rgba(0, 0, 0, 0.5)),
-    url("../../assets/images/background/plantingcamp.jpg");
+      background-image: linear-gradient(rgba(255, 255, 255, 0.527), rgba(255, 255, 255, 0.5)),
+    url("../../assets/images/background/helicopter.jpg");
     background-repeat: no-repeat;
-    background-position: 50% 0;
+    background-position: center;
     background-size: cover;
       &--hidden {
         height: 30rem;
+        background-position: center;
       }
       // height:30rem;
     }
