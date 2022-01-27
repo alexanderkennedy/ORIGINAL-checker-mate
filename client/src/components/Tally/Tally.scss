@@ -1,18 +1,23 @@
 .tally{
-    width: 60%;
+    // width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 2%;
-    color: crimson;
     font-size: 2REM;
+    align-items: center;
+    // padding-left: 20rem;
+    // padding-right: 20rem;
 
     &__popup{
+        // width: 60%;
         display:flex;
         justify-content: center;
     }
 
     &__image{
+        width: 80vw;
+        height: 60vh;
         height:20rem;
     }
     &__head {

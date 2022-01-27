@@ -5,8 +5,8 @@ import "./MainList.scss";
 import Tally from "../../components/Tally/Tally";
 import { FaRegHandshake } from "react-icons/fa";
 
-// const playerHeight = "84.375";
-// const playerWidth = "150";
+const playerHeight = "84.375";
+const playerWidth = "150";
 
 class MainList extends Component {
   state = {
@@ -244,6 +244,7 @@ class MainList extends Component {
             ))}
           </tbody>
         </table>
+        {/* NOTE: I will leave this code here and come back to it to remind myself to put in videos in phase 2 */}
         {/* <div className="youtube">
             <iframe width={playerWidth} height={playerHeight} src="https://www.youtube.com/embed/497RHaz_ajg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div> */}

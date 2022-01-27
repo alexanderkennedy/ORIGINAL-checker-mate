@@ -7,7 +7,7 @@
     "url": "https://www.youtube.com/watch?v=ea1RJUOiNfQ&ab_channel=StJohnAmbulance",
     "title": "How to do the Primary Survey - First Aid Training - St John Ambulance",
     "priority": "4",
-    "watched": true
+    "watched": false
   },
   {
     "listName": "first-aid",
@@ -17,7 +17,7 @@
     "url": "https://www.youtube.com/watch?v=jYtJS1PtNq0&ab_channel=AmericanRedCross",
     "title": "First Aid for Severe Bleeding",
     "priority": "4",
-    "watched": true
+    "watched": false
   },
   {
     "listName": "first-aid",
@@ -27,6 +27,6 @@
     "url": "https://www.redcross.org.uk/first-aid/learn-first-aid/allergic-reaction",
     "title": "Learn first aid for someone having a severe allergic reaction (anaphylaxis)",
     "priority": "4",
-    "watched": true
+    "watched": false
   }
 ]
