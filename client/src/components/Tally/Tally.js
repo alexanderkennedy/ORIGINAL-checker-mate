@@ -12,7 +12,12 @@ import no6 from "../../assets/animation/no6.png";
 import no7 from "../../assets/animation/no7.png";
 import no8 from "../../assets/animation/no8.png";
 import tree from "../../assets/animation/tree.gif";
-
+import bottom0 from "../../assets/images/bottomTally/bottom0A.png";
+import bottom2 from "../../assets/images/bottomTally/bottom2A.png";
+import bottom4 from "../../assets/images/bottomTally/bottom4A.png";
+import bottom6 from "../../assets/images/bottomTally/bottom6A.png";
+import bottom8 from "../../assets/images/bottomTally/bottom8.PNG";
+import bottom9 from "../../assets/images/bottomTally/bottom9.PNG";
 
 
 class Tally extends Component {
@@ -103,19 +108,134 @@ class Tally extends Component {
         
             {`TALLY :${this.state.tally}`}/9
             {/* {` Mandatory Tally:${this.state.mandatoryTally}`}/3 */}
-         
-         
-          </p>  {this.state.tally === 9 ? (
-          <div className="tally__popup">
+          </p> 
+
+          {this.state.tally === 0 ? (
+          <div className="bottom-tally__popup">
             <img
-              className="tally__image"
-              src={heMan}
+              className="bottom-tally__image"
+              src={bottom0}
               alt="descriptive text"
             ></img>
           </div>
         ) : (
           ""
         )}
+
+          {this.state.tally === 1 ? (
+          <div className="bottom-tally__popup">
+            <img
+              className="bottom-tally__image"
+              src={bottom0}
+              alt="descriptive text"
+            ></img>
+          </div>
+        ) : (
+          ""
+        )}
+
+          {this.state.tally === 2 ? (
+          <div className="bottom-tally__popup">
+            <img
+              className="bottom-tally__image"
+              src={bottom2}
+              alt="descriptive text"
+            ></img>
+          </div>
+        ) : (
+          ""
+        )}
+
+          {this.state.tally === 3 ? (
+          <div className="bottom-tally__popup">
+            <img
+              className="bottom-tally__image"
+              src={bottom2}
+              alt="descriptive text"
+            ></img>
+          </div>
+        ) : (
+          ""
+        )}
+
+          {this.state.tally === 4 ? (
+          <div className="bottom-tally__popup">
+            <img
+              className="bottom-tally__image"
+              src={bottom4}
+              alt="descriptive text"
+            ></img>
+          </div>
+        ) : (
+          ""
+        )}
+
+
+          {this.state.tally === 5 ? (
+          <div className="bottom-tally__popup">
+            <img
+              className="bottom-tally__image"
+              src={bottom6}
+              alt="descriptive text"
+            ></img>
+          </div>
+        ) : (
+          ""
+        )}
+          
+          {this.state.tally === 6 ? (
+          <div className="bottom-tally__popup">
+            <img
+              className="bottom-tally__image"
+              src={bottom6}
+              alt="descriptive text"
+            ></img>
+          </div>
+        ) : (
+          ""
+        )}
+
+
+          {this.state.tally === 7 ? (
+          <div className="bottom-tally__popup">
+            <img
+              className="bottom-tally__image"
+              src={bottom6}
+              alt="descriptive text"
+            ></img>
+          </div>
+        ) : (
+          ""
+        )}
+          
+          
+          {this.state.tally === 8 ? (
+          <div className="bottom-tally__popup">
+            <img
+              className="bottom-tally__image"
+              src={bottom8}
+              alt="descriptive text"
+            ></img>
+          </div>
+        ) : (
+          ""
+        )}
+          
+           {this.state.tally === 9 ? (
+          <div className="bottom-tally__popup">
+            <img
+              className="bottom-tally__image"
+              src={bottom9}
+              alt="descriptive text"
+            ></img>
+          </div>
+        ) : (
+          ""
+        )}
+
+
+
+
         </div>
         </div>
 
