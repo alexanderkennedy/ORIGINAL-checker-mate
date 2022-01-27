@@ -98,11 +98,29 @@ class Tally extends Component {
       <div className="tally">
         <div className="tally__row">
           <p className="tally__head">
+
+        
+        
             {`TALLY :${this.state.tally}`}/9
             {/* {` Mandatory Tally:${this.state.mandatoryTally}`}/3 */}
-          </p>
+         
+         
+          </p>  {this.state.tally === 9 ? (
+          <div className="tally__popup">
+            <img
+              className="tally__image"
+              src={heMan}
+              alt="descriptive text"
+            ></img>
+          </div>
+        ) : (
+          ""
+        )}
         </div>
         </div>
+
+
+
 )
 if(this.props.location==="top") return (
 
@@ -143,6 +161,18 @@ if(this.props.location==="top") return (
         ) : (
           ""
         )}
+
+{/* {this.state.tally === 3 ? (
+          <div className="tally__popup">
+            <img
+              className="tally__image"
+              src={tree}
+              alt="descriptive text"
+            ></img>
+          </div>
+        ) : (
+          ""
+        )} */}
 
 {this.state.tally === 3 ? (
           <div className="tally__popup">
@@ -220,6 +250,8 @@ if(this.props.location==="top") return (
         ) : (
           ""
         )}
+
+
 
 
         

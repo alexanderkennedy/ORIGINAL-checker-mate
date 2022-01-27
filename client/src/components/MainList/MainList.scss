@@ -21,7 +21,7 @@
 
     outline: 3px dashed rgb(35, 58, 42);
     outline-offset: 10px;
-    background: rgb(161, 191, 245);
+    // background: rgb(161, 191, 245);
     border: 1px solid blue;
     margin: 15px;
     overflow: hidden;
@@ -45,28 +45,32 @@
 
   &__row {
     &--hidden {
-      &--item {}
-        &--mediaType {
-          font-size: 4rem;
-        }
-        &--time {
-          font-size: 3rem;
-        }
+      &--item {
+      }
+      &--mediaType {
+        font-size: 4rem;
+      }
+      &--time {
+        font-size: 3rem;
+      }
 
-        &--title {
-          font-size: 2rem;
-        }
-        &--priority {
-          font-size: 3rem;
-        }
-      
+      &--title {
+        font-size: 2rem;
+      }
+      &--priority {
+        font-size: 3rem;
+      }
     }
   }
 
   &__body-wrap {
     &--workplace {
-      background-color: rgb(165, 165, 229);
-      background-image: url("../../assets/images/background/plantingcamp.jpg");
+      // background-color: rgb(165, 165, 229);
+      background-image: linear-gradient(rgba(50, 50, 50, 0.527), rgba(0, 0, 0, 0.5)),
+    url("../../assets/images/background/plantingcamp.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
       &--hidden {
         height: 30rem;
       }
@@ -98,7 +102,7 @@ a {
   font-weight: bold;
   background-color: rgba(162, 194, 207, 0.438);
   &:hover {
-    font-size:1.8rem;
+    font-size: 1.8rem;
     text-decoration: underline;
     background-color: rgb(220, 185, 243);
   }
